@@ -1,16 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { AsideContainer, MenuWrapper, Wrapper } from "./styles";
-import raceStatus from "../../utils/raceStatus";
 import RadioSelector from "../RadioSelector";
+import { useCharacters } from "../../providers/characters";
 
-const RaceSelect = ({handleSelect, race}) =>{
-    const races = useRef([]);
+const CharacterSelect = ({handleSelect, characterName}) =>{
+    const {characters} = useCharacters();
+    const options = useRef([]);
     const [topIndicator, setTopIndicator] = useState("45px");
     const [leftIndicator, setLeftIndicator] = useState("-4px");
     const indicator = useRef(null);
   
     const getDimensions = () => {
-        races.current.forEach((item) => {
+        options.current.forEach((item) => {
             if (item?.className.includes("option--selected")) {
             const top = item.offsetTop;
             const left = item.offsetLeft;
@@ -18,12 +19,12 @@ const RaceSelect = ({handleSelect, race}) =>{
             setTopIndicator(`${top+5}px`);
             }
         });
-        races.current=[];
+        options.current=[];
     };
   
     useEffect(() => {
       getDimensions();
-    }, [race]);
+    }, [characterName]);
 
     window.onresize = () => {
         getDimensions();
@@ -36,15 +37,15 @@ const RaceSelect = ({handleSelect, race}) =>{
             topIndicator={topIndicator}
             leftIndicator={leftIndicator}
             >
-                {!!race && <span className="indicator" ref={indicator}></span>}
-                {raceStatus.map(status => {
+                {!!characterName && <span className="indicator" ref={indicator}></span>}
+                {characters.map((character,id) => {
                     return <RadioSelector
-                    key={status.race}
-                    options={races}  
-                    name="race" 
-                    value={status.race} 
-                    selected={status.race === race} 
-                    onChange={(e) => handleSelect(e)}>{status.race}</RadioSelector>
+                    key={id}
+                    options={options}  
+                    name="character" 
+                    value={character.name} 
+                    selected={character.name === characterName} 
+                    onChange={(e) => handleSelect(e)}>{character.name}</RadioSelector>
                 })}
             </MenuWrapper>
         </Wrapper>
@@ -52,4 +53,4 @@ const RaceSelect = ({handleSelect, race}) =>{
     );
 }
 
-export default RaceSelect;
+export default CharacterSelect;

@@ -10,7 +10,7 @@ import { FaPlusCircle, FaBolt, FaDumbbell, FaFistRaised, FaBrain, FaSun, FaComme
 import CharacterStat from "../../components/CharacterStat";
 
 const CreateStats = () => {
-    const {preCharacter, addCharacter} = useCharacters()
+    const {preCharacter, characters, addCharacter} = useCharacters()
     const raceBonuses = raceStatus.filter((race)=>{
         return race.race === preCharacter.race
     })
@@ -53,7 +53,7 @@ const CreateStats = () => {
     });
       
     const character = {
-        id: 0,
+        id: characters.length,
         name: preCharacter.name,
         race: preCharacter.race,
         level:0,

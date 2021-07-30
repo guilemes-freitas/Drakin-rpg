@@ -51,8 +51,8 @@ const CreateCharacter = () => {
     if(!name || !race){
       setError(true)
     }else{
-      savePreCharacter(character)
-      history.push("/stats")
+      const alreadyHave = savePreCharacter(character)
+      alreadyHave ? setError(true) : history.push("/stats")
     }
   };
 
@@ -81,7 +81,7 @@ const CreateCharacter = () => {
               <ArrowButton type="submit"></ArrowButton>
             </ButtonWrapperRight>
             <ButtonWrapperLeft>
-              <ArrowButton isLeft></ArrowButton>
+              <ArrowButton onClickFunc={() => history.push("/")} isLeft></ArrowButton>
             </ButtonWrapperLeft>
           </FormContainer>
         </PageBorder>

@@ -45,7 +45,7 @@ export const SectionTitle = styled.h2`
   position: absolute;
   background-color: var(--black);
   padding: 0 5px;
-  bottom: 97%;
+  bottom: 96%;
 `;
 
 export const Benefit = styled.span`
@@ -109,11 +109,16 @@ export const Benefits = styled.div`
   top: 36%;
   span{
     color: var(--blue);
-    font-size: 24px;
+    font-size: 18px;
   }
   .disadvantage{
     background-color: var(--black);
     color: var(--red);
+  }
+  @media screen and (min-width: 1400px) {
+    span{
+      font-size: 24px;
+    }
   }
 `;
 
@@ -128,5 +133,8 @@ export const Description = styled.span`
   text-align: left;
   top: 57%;
   z-index: 5;
-  font-size: 22px;
+  font-size: 18px;
+  @media screen and (min-width: 1400px) {
+    font-size: 22px;
+  }
 `;

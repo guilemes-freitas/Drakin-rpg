@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 100%;
+    width: ${props => props.background ? "95.6%" : "100%"};
     height: 93%;
     background-color: transparent;
     position: ${props => props.background ? "absolute" : "relative"};

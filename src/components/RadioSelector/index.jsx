@@ -1,8 +1,8 @@
 import { Container, Race, ItemBorder, RadioButton } from "./styles";
 
-const RadioSelector = ({ name, value, selected, children, races, ...rest }) => {
+const RadioSelector = ({ name, value, selected, children, options, ...rest }) => {
   return (
-    <Container ref={(el) => races.current.push(el)}  className={selected && "race--selected"} >
+    <Container ref={(el) => options.current.push(el)}  className={selected && "option--selected"} >
       <RadioButton
         type="radio"
         name={name}

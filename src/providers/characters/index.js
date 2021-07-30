@@ -21,8 +21,18 @@ export const CharacterProvider = ({ children }) => {
   };
 
   const savePreCharacter = (data) =>{
+    let alreadyHave = false
     localStorage.setItem(`@Drakin:PreCharacter`, JSON.stringify(data));
-    setPreCharacter(data);
+    const list = JSON.parse(localStorage.getItem(`@Drakin:Characters`)) || [];
+    const nameList = list.map((character)=>{
+      return character.name
+    })
+    if(!nameList.includes(data.name)){
+      setPreCharacter(data);
+    } else{
+      alreadyHave = true
+    }
+    return alreadyHave
   };
 
   return (
