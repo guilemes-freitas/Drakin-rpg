@@ -45,7 +45,7 @@ export const SectionTitle = styled.h2`
   position: absolute;
   background-color: var(--black);
   padding: 0 5px;
-  bottom: 96%;
+  bottom: 97%;
 `;
 
 export const Benefit = styled.span`
