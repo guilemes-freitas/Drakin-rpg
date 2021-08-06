@@ -39,7 +39,7 @@ const raceStatus = [
       "Dragon Skin: Habilidade Inata passiva. A pele dos Drakin pode dissipar magias, incluindo de personagens aliados. Essa habilidade não funciona contra magias refinadas, como encantamentos e maldições.",
     ],
     proficiences:{},
-    bonus:{strength:4},
+    bonus:{strength:4, agility: 12},
     resistences:{"Intimidação":1},
     description: "Nascido dos dragões. Os Drakin são uma raça guerreira, muito mais fortes, orgulhosos e impetuosos que os humanos, vivem em regiões com alta ocorrência de dragões. Sua maior população está em Drakimar, no sul do continente Swordenfell, e ao norte do continente élfico. As características principais dos Drakins são seus cabelos prateados e seus olhos de dragão.",
   },

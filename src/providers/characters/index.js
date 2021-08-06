@@ -6,7 +6,10 @@ export const CharacterProvider = ({ children }) => {
   const [preCharacter, setPreCharacter] = useState(JSON.parse(localStorage.getItem(`@Drakin:PreCharacter`)) || {});
 
   const addCharacter = (newCharacter) => {
-    const list = JSON.parse(localStorage.getItem(`@Drakin:Characters`)) || [];
+    let list = JSON.parse(localStorage.getItem(`@Drakin:Characters`)) || [];
+    list.sort((a,b)=>{
+      return a.id - b.id
+    })
     newCharacter && list.push(newCharacter);
     localStorage.setItem(`@Drakin:Characters`, JSON.stringify(list));
     localStorage.removeItem(`@Drakin:PreCharacter`);
@@ -15,7 +18,10 @@ export const CharacterProvider = ({ children }) => {
   };
 
   const removeCharacter = (deletedCharacter) =>{
-    const list = characters.filter((filtered) => filtered.id !== deletedCharacter.id);
+    let list = characters.filter((filtered) => filtered.id !== deletedCharacter.id);
+    list.sort((a,b)=>{
+      return a.id - b.id
+    })
     localStorage.setItem(`@Drakin:Characters`, JSON.stringify(list));
     setCharacters(list);
   };
@@ -23,7 +29,10 @@ export const CharacterProvider = ({ children }) => {
   const savePreCharacter = (data) =>{
     let alreadyHave = false
     localStorage.setItem(`@Drakin:PreCharacter`, JSON.stringify(data));
-    const list = JSON.parse(localStorage.getItem(`@Drakin:Characters`)) || [];
+    let list = JSON.parse(localStorage.getItem(`@Drakin:Characters`)) || [];
+    list.sort((a,b)=>{
+      return a.id - b.id
+    })
     const nameList = list.map((character)=>{
       return character.name
     })
@@ -35,9 +44,19 @@ export const CharacterProvider = ({ children }) => {
     return alreadyHave
   };
 
+  const updateCharacter = (data) =>{
+    let list = characters.filter((filtered) => filtered.id !== data.id);
+    data && list.push(data);
+    list.sort((a,b)=>{
+      return a.id - b.id
+    })
+    localStorage.setItem(`@Drakin:Characters`, JSON.stringify(list));
+    setCharacters(list);
+  }
+
   return (
     <CharacterContext.Provider
-      value={{ characters, addCharacter, removeCharacter, preCharacter, savePreCharacter}}
+      value={{ characters, addCharacter, removeCharacter, preCharacter, updateCharacter, savePreCharacter}}
     >
       {children}
     </CharacterContext.Provider>

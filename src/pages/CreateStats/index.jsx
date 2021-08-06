@@ -8,6 +8,7 @@ import Stat from "../../components/Stat";
 import { useCharacters } from "../../providers/characters";
 import { FaPlusCircle, FaBolt, FaDumbbell, FaFistRaised, FaBrain, FaSun, FaCommentDots, FaEye } from "react-icons/fa";
 import CharacterStat from "../../components/CharacterStat";
+import calculateHP from "../../utils/calculateHP";
 
 const CreateStats = () => {
     const {preCharacter, characters, addCharacter} = useCharacters()
@@ -25,13 +26,13 @@ const CreateStats = () => {
     const [perception, setPerception] = useState(5);
     const [error, setError] = useState(false);
 
-  const history = useHistory();
-  const handlePoints = (value) =>{
-      setAvailablePoints(availablePoints+value)
-      setError(false)
-  }
+    const history = useHistory();
+    const handlePoints = (value) =>{
+        setAvailablePoints(availablePoints+value)
+        setError(false)
+    }
 
-  const onSubmitFunction = () => {
+    const onSubmitFunction = () => {
     
     const stats = {
         vigor:vigor,
@@ -51,14 +52,15 @@ const CreateStats = () => {
             totalStats[key] ? totalStats[key] += value : totalStats[key] = value
         }
     });
+    const PA = totalStats.agility < 5 ? 2 : 3 + Math.floor(totalStats.agility/12)
       
     const character = {
         id: characters.length,
         name: preCharacter.name,
         race: preCharacter.race,
         level:0,
-        maxHP: vigor*4,
-        currentHP: vigor*4,
+        maxHP: calculateHP(vigor),
+        currentHP: calculateHP(vigor),
         maxArmor: 0,
         currentArmor: 0,
         extraArmor: {
@@ -66,14 +68,14 @@ const CreateStats = () => {
             turns: 0, 
         },
         stats:totalStats,
-            PA: 3,
-            gold:150,
-            experience:0,
-            effects:{
-                stun:0,
-                bleed:{
-                points:0,
-                turns:0
+        PA: PA,
+        gold:150,
+        experience:0,
+        effects:{
+            stun:0,
+            bleed:{
+            points:0,
+            turns:0
             },
             blight:{
                 points:0,
@@ -121,7 +123,7 @@ const CreateStats = () => {
                     <p>Nome: {preCharacter.name}</p>
                     <p>Raça: {preCharacter.race}</p>
                     <p>Nível: 0</p>
-                    <p>Ouro: {raceStatus[0]?.bonus.gold ? raceStatus[0].bonus.gold + 150 : 150}</p>
+                    <p>Ouro: {raceBonuses[0]?.bonus.gold ? raceBonuses[0].bonus.gold + 150 : 150}</p>
                 </CharacterStatWrapper>
             </LeftContainer>
             <MiddleContainer>
@@ -135,7 +137,7 @@ const CreateStats = () => {
             <RightSideContainer>
                 <RightSide/>
                 <CharacterStatWrapper>
-                    <CharacterStat bonus={raceBonuses[0]?.bonus.vigor} statValue={vigor*4} statType={"Vida"}></CharacterStat>
+                    <CharacterStat bonus={raceBonuses[0]?.bonus.vigor} statValue={calculateHP(vigor)} statType={"Vida"}></CharacterStat>
                     <CharacterStat bonus={raceBonuses[0]?.bonus.strength} statValue={strength} statType={"Força"}></CharacterStat>
                     <CharacterStat bonus={raceBonuses[0]?.bonus.agility} statValue={agility} statType={"Agilidade"}></CharacterStat>
                     <CharacterStat bonus={raceBonuses[0]?.bonus.faith} statValue={faith} statType={"Fé"}></CharacterStat>

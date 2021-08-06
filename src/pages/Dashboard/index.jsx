@@ -7,11 +7,11 @@ const Dashboard = () => {
   return (
     <Container>
       <PageBorder background></PageBorder>
-      <NavLink to="/newCharacter">
-        <DashboardCard>Criar novo personagem</DashboardCard>
-      </NavLink>
       <NavLink to="/characters">
         <DashboardCard >Seus personagens</DashboardCard>
+      </NavLink>
+      <NavLink to="/newCharacter">
+        <DashboardCard>Criar novo personagem</DashboardCard>
       </NavLink>
       <DashboardCard >Regras</DashboardCard>
     </Container>

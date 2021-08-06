@@ -38,7 +38,7 @@ export const InputItem = styled.input`
 
 export const Label = styled.label`
   position: absolute;
-  top: -11px;
+  top: -16px;
   left: 6px;
   background-color: var(--black);
   padding: 0 6px;
