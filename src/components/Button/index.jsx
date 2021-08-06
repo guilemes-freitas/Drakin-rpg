@@ -1,9 +1,9 @@
 import { Border, Container } from "./styles";
 
-const Button = ({onClickFunc, color,children}) => {
+const Button = ({onClickFunc, color,children, size, whiteSchema=false}) => {
     return(
-        <Container onClick={onClickFunc} color={color}>
-            <Border>
+        <Container whiteSchema={whiteSchema} size={size} onClick={onClickFunc} color={color}>
+            <Border whiteSchema={whiteSchema} size={size}>
                 {children}
             </Border>
         </Container>

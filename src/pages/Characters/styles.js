@@ -67,6 +67,7 @@ export const StatWrapper = styled.div`
 export const CurrentStatContainer = styled.div`
   display: flex;
   align-items: flex-start;
+  position: relative;
   justify-content:  space-around;
   gap: 5rem;
 `;
@@ -80,12 +81,38 @@ export const PATitle = styled.h2`
 export const ButtonWrapper = styled.div`
   display: flex;
   gap: 2rem;
-margin-top: 3rem;
+  position: absolute;
+  bottom: 2rem;
+  align-items: center;
 `;
 
 export const PAWrapper = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 5rem;
+`
+
+export const ButtonArmorWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;    
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+`
+
+export const TurnWrapper = styled.div`
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+`
+
+export const EffectsWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content:  space-around;
+  position: absolute;
+  left: 2rem;
 `

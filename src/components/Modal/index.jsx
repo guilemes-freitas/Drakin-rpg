@@ -12,10 +12,29 @@ import "antd/dist/antd.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useState } from "react";
 
-const Modal = ({ isModalVisible = false,handleDamage,title,text, setIsModalVisible,color }) => {
+const Modal = ({ isModalVisible = false,confirmFunc,handlePenetration=false,title,text, setIsModalVisible,color }) => {
   const [statValue,setStatValue] = useState(0);
+  const [armorPenetration,setArmorPenetration] = useState(false);
+  const [penetration,setPenetration] = useState(0);
   const minValue = 0;
   const maxValue = 999;
+
+  const handleIsPenetration = () =>{
+    setArmorPenetration(!armorPenetration)
+    setPenetration(0)
+  }
+
+  const handlePenetrationDecrease = () => {
+    if(penetration > minValue){
+      setPenetration(penetration - 1)
+    }
+  };
+
+  const handlePenetrationIncrease = () =>{
+    if(penetration < maxValue){
+      setPenetration(penetration + 1)
+    }
+  };
 
   const handleDecrease = () => {
     if(statValue > minValue){
@@ -55,13 +74,16 @@ const Modal = ({ isModalVisible = false,handleDamage,title,text, setIsModalVisib
 
   const handleCloseModal = () => {
     setStatValue(0)
+    setPenetration(0)
+    setArmorPenetration(false)
     setIsModalVisible(false);
   };
 
   const handleConfirm = () => {
-    handleDamage(statValue)
+    confirmFunc(statValue)
     setStatValue(0)
     setIsModalVisible(false);
+    handlePenetration && handlePenetration(penetration)
   };
 
 
@@ -107,6 +129,22 @@ const Modal = ({ isModalVisible = false,handleDamage,title,text, setIsModalVisib
       ]}
     >
       <BodyContainer>
+        {title === 'Dano' && <Button onClick={handleIsPenetration}>Penetração de armadura</Button>}
+        {armorPenetration && <ButtonWrapper>
+          <Button 
+                disabled={penetration === minValue}
+                onClick={handlePenetrationDecrease}
+            >
+            <FaChevronLeft></FaChevronLeft>
+            </Button>
+            {penetration}
+            <Button 
+                disabled={penetration === maxValue}
+                onClick={handlePenetrationIncrease}
+            >
+            <FaChevronRight></FaChevronRight>
+            </Button>
+            </ButtonWrapper>}
         <ButtonWrapper>
           <Button 
                   disabled={statValue+100 > maxValue}
