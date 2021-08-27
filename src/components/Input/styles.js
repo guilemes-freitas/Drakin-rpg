@@ -53,6 +53,10 @@ export const Label = styled.label`
 
 export const Container = styled.div`
   position: relative;
+  width: 100%;
+  height: 48px;
+  @media screen and (min-width: 720px) {
   width: 50%;
   height: 36px;
+  }
 `;

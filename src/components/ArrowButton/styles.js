@@ -4,9 +4,12 @@ import TriangleButtonLeft from "../../assets/images/TriangleButtonLeft.svg";
 
 export const ButtonItem = styled.button`
   background-color: transparent;
-  width: 100px;
-  height: 96px;
-  /* clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%); */
+  width: 80px;
+  height: 70px;
+  @media screen and (min-width: 1400px) {
+    width: 100px;
+    height: 96px;
+  }
 `;
 
 export const Triangle = styled.div`

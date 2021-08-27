@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const AsideContainer = styled.aside`
-    width: 100%;
+    width: 280px;
     height: 80px;
 
     position: fixed;
     bottom: 0;
-    right: 0;
     z-index: 3;
     display: flex;
     justify-content: center;
+    align-content: center;
     background-color: transparent;
     border-radius: 0;
 
@@ -17,6 +17,7 @@ export const AsideContainer = styled.aside`
         border-radius: 0 24px 24px 0;
         height: unset;
         bottom: 80%;
+        right: 0;
 
         width: 128px;
         justify-content: center;
@@ -31,18 +32,17 @@ export const MenuWrapper = styled.nav`
   display: flex;
   flex-direction: row;
   position: relative;
-  padding-right: 8px;
 
   .indicator {
     position: absolute;
     left: ${(props) => props.leftIndicator};
-    top: 21px;
+    top: 32px;
     background-color: var(--blue);
-    height: 14px;
-    width: 14px;
+    height: 12px;
+    width: 12px;
     z-index: 4;
     transition: left 500ms;
-    transform: translateX(-4px);
+    transform: translateX(15px) rotate(45deg);
   }
 
   @media screen and (min-width: 720px) {
@@ -78,6 +78,9 @@ export const MenuWrapper = styled.nav`
     }
     .indicator {
       position: absolute;
+      height: 14px;
+      width: 14px;
+      top: 21px;
       left: 91px;
       top: ${(props) => props.topIndicator};
       transform: translateY(5px);

@@ -58,10 +58,10 @@ const CreateCharacter = () => {
 
   return (
     <Container>
-    <RaceImage image={raceInfo && raceInfo.image}></RaceImage>
-    <Benefits>{raceInfo && benefits.map((benefit,index) => {return <span key={index}>{benefit}</span>})}
-    {disadvantages && disadvantages.map((disadvantage,index) => {return <span key={index} className="disadvantage">{disadvantage}</span>})}</Benefits>
-      {raceInfo && <Description>{raceInfo.description}</Description>}
+      <RaceImage image={raceInfo && raceInfo.image}></RaceImage>
+      <Benefits>{raceInfo && benefits.map((benefit,index) => {return <span key={index}>{benefit}</span>})}
+      {disadvantages && disadvantages.map((disadvantage,index) => {return <span key={index} className="disadvantage">{disadvantage}</span>})}</Benefits>
+        {raceInfo && <Description>{raceInfo.description}</Description>}
       
       <PageBorder>
           <FormContainer onSubmit={onSubmitFunction}>

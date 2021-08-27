@@ -181,8 +181,22 @@ export const StatsContainer = styled.div`
 `;
 
 export const StatWrapper = styled.div`
-font-size: 0;
+  font-size: 0;
   display: flex;
+  .Hexagon{
+    margin-bottom: calc(26px - 155px * 0.2886);
+    @media screen and (min-width: 720px) {
+      margin-bottom: calc(22px - 155px * 0.2886);
+    }
+  }
+`;
+
+export const StatWrapperAbsolute = styled.div`
+  font-size: 0;
+  display: flex;
+  position: absolute;
+  right: 7rem;
+  bottom: 150px;
   .Hexagon{
     margin-bottom: calc(26px - 155px * 0.2886);
     @media screen and (min-width: 720px) {

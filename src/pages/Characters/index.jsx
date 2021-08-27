@@ -10,6 +10,7 @@ import PA from "../../components/PA";
 import Modal from "../../components/Modal";
 import Button from "../../components/Button";
 import ModalExtraArmor from "../../components/ModalExtraArmor";
+import ModalEffect from "../../components/ModalEffect";
 import ExtraStat from "../../components/ExtraStat";
 
 const Characters = () => {
@@ -18,6 +19,7 @@ const Characters = () => {
     const [isArmorVisible, setIsArmorVisible] = useState(false);
     const [isMaxArmorVisible, setIsMaxArmorVisible] = useState(false);
     const [isExtraArmorVisible, setIsExtraArmorVisible] = useState(false);
+    const [isEffectModalVisible, setIsEffectModalVisible] = useState(false);
     const {characters, updateCharacter} = useCharacters();
     const [characterName, setCharacterName] = useState("");
     const [character, setCharacter] = useState(false)
@@ -123,6 +125,11 @@ const Characters = () => {
         updateCharacter(character)
     }
 
+    const handleEffect = (type,quantity,turn) => {
+        character.effects[type].turns = turn
+        character.effects[type].points = quantity
+    }
+
     const handleSelect = (e) => {
         setCharacterName(e.target.value);
         const characterArray = characters.filter((character)=>{
@@ -152,6 +159,7 @@ const Characters = () => {
                                     <CharacterStat statValue={character?.stats.strength} statType={"Força"}></CharacterStat>
                                     <CharacterStat statValue={character?.stats.agility} statType={"Agilidade"}></CharacterStat>
                                     <CharacterStat statValue={character?.stats.faith} statType={"Fé"}></CharacterStat>
+                                    <CharacterStat statValue={character?.stats.wisdom} statType={"Sabedoria"}></CharacterStat>
                                 </StatWrapper>
                                 <StatWrapper>
                                     <CharacterStat statValue={character?.stats.intelligence} statType={"Inteligência"}></CharacterStat>
@@ -185,14 +193,14 @@ const Characters = () => {
                                 <ButtonArmorWrapper>
                                     <Button color={'--blue'} size={'medium'} onClickFunc = {() =>setIsExtraArmorVisible(!isExtraArmorVisible)}>Armadura extra</Button>
                                     <Button color={'--blue'} size={'big'} onClickFunc = {() =>setIsArmorVisible(!isArmorVisible)}>Recuperar armadura</Button>
-                                    <Button color={'--blue'} onClickFunc = {() => setIsMaxArmorVisible(!isMaxArmorVisible)}>Atualizar armadura máxima</Button>
+                                    <Button color={'--blue'} onClickFunc = {() => setIsMaxArmorVisible(!isMaxArmorVisible)}>Armadura máxima</Button>
                                 </ButtonArmorWrapper>
                             </ButtonWrapper>
                             <TurnWrapper>
                                 <Button color={'--green'} size={'medium'} onClickFunc = {handleNextTurn}>Inicio de turno</Button>
                             </TurnWrapper>
                             <EffectsWrapper>
-                                <Button whiteSchema size={'medium'}>Efeitos</Button>
+                                <Button whiteSchema size={'medium'} onClickFunc={() => setIsEffectModalVisible(!isEffectModalVisible)}>Efeitos</Button>
                             </EffectsWrapper>
                             
                         </>
@@ -235,6 +243,11 @@ const Characters = () => {
                       setIsModalVisible={setIsExtraArmorVisible}
                       confirmFunc={handleExtraArmor}
                     ></ModalExtraArmor>
+                    <ModalEffect
+                      isModalVisible={isEffectModalVisible}
+                      setIsModalVisible={setIsEffectModalVisible}
+                      confirmFunc={handleEffect}
+                    ></ModalEffect>
                     <CharacterSelect handleSelect={ handleSelect} characterName={characterName}></CharacterSelect>
                 </Content>
             </PageBorder>

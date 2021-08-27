@@ -16,10 +16,14 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 1rem;
   z-index: 2;
   width: 100%;
-  height: 100%;
+  height: 80%;
+  @media screen and (min-width: 1400px) {
+    gap: 3rem;
+    height: 100%;
+  }
 `;
 
 export const SectionTitle = styled.h2`
@@ -56,7 +60,6 @@ export const StatWrapper = styled.div`
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  height: 75%;
   p{
     font-size: 28px;
     z-index: 5;
@@ -69,21 +72,30 @@ export const CurrentStatContainer = styled.div`
   align-items: flex-start;
   position: relative;
   justify-content:  space-around;
-  gap: 5rem;
+  gap: 3rem;
+  @media screen and (min-width: 1400px) {
+    gap: 5rem;
+  }
 `;
 
 export const PATitle = styled.h2`
-  font-size: 32px;
+  font-size: 28px;
   text-transform: uppercase;
   font-weight: 500;
+  @media screen and (min-width: 1400px) {
+  font-size: 32px;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
   display: flex;
   gap: 2rem;
   position: absolute;
-  bottom: 2rem;
+  bottom: 1rem;
   align-items: center;
+  @media screen and (min-width: 1400px) {
+    bottom: 2rem;
+  }
 `;
 
 export const PAWrapper = styled.div`
@@ -114,5 +126,5 @@ export const EffectsWrapper = styled.div`
   align-items: flex-start;
   justify-content:  space-around;
   position: absolute;
-  left: 2rem;
+  right: 8rem;
 `

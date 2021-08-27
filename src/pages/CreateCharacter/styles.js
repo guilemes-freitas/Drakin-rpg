@@ -3,11 +3,14 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  padding: 0px 30px;
+  padding: 0px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  @media screen and (min-width: 720px) {
+    padding: 0px 30px;
+  }
 `;
 
 export const Content = styled.div`
@@ -67,17 +70,24 @@ export const ButtonWrapperLeft = styled.div`
 `;
 
 export const RaceImage = styled.div`
-  display: none;
+  background-image: url(${props => props.image});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: block;
+  z-index: 2;
+  opacity: 0.2;
   @media screen and (min-width: 720px) {
-    display: block;
-    background-image: url(${props => props.image});
-    background-size: cover;
-    background-position: center;
     height: 100%;
     z-index: 4;
     width: 42%;
     left: 45%;
+    opacity: 1;
     position: absolute;
+    background-size: contain;
   }
   @media screen and (min-width: 940px) {
     width: 33%;
@@ -92,9 +102,12 @@ export const RaceTitle = styled.h2`
     text-decoration: underline;
     font-weight: 500;
     text-transform: uppercase;
-    font-size: 48px;
+    font-size: 36px;
     left: 22%;
     top: 23%;
+  }
+  @media screen and (min-width: 1400px) {
+    font-size: 48px;
   }
 `;
 
@@ -102,7 +115,7 @@ export const Benefits = styled.div`
   display: flex;
   text-align: center;
   flex-direction: column;
-  width: 55%;
+  width: 100%;
   position: absolute;
   background-color: var(--white);
   left: 0;
@@ -115,6 +128,9 @@ export const Benefits = styled.div`
     background-color: var(--black);
     color: var(--red);
   }
+  @media screen and (min-width: 720px) {
+    width: 55%;
+  }
   @media screen and (min-width: 1400px) {
     span{
       font-size: 24px;
@@ -126,14 +142,19 @@ export const Description = styled.span`
   display: flex;
   text-align: center;
   flex-direction: column;
-  width: 55%;
+  width: 90%;
+  font-size: 14px;
   position: absolute;
   color: var(--white);
-  left: 3%;
-  text-align: left;
+  text-align: center;
   top: 57%;
   z-index: 5;
-  font-size: 18px;
+  @media screen and (min-width: 720px) {
+    left: 3rem;
+    width: 65%;
+    font-size: 18px;
+    text-align: left;
+  }
   @media screen and (min-width: 1400px) {
     font-size: 22px;
   }

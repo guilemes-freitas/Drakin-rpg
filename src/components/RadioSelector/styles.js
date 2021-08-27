@@ -5,8 +5,17 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   width: 102px;
-  height: 23px;
+  height: 47px;
   position: relative;
+  flex-direction: column;
+  align-items: center;
+
+
+  @media screen and (min-width: 720px) {
+    width: 102px;
+    height: 23px;
+    flex-direction: row;
+  }
 `;
 
 export const ItemBorder = styled.div`
@@ -14,10 +23,14 @@ export const ItemBorder = styled.div`
   border: 2px solid;
   border-color: ${(props) => (props.selected ? "var(--blue)" : "var(--white)")};
   transition: all 500ms;
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   transform: rotate(45deg);
   cursor: pointer;
+  @media screen and (min-width: 720px) {
+    width: 22px;
+    height: 22px;
+  }
 `;
 
 export const RadioButton = styled.input`
@@ -33,8 +46,11 @@ export const RadioButton = styled.input`
 
 export const Race = styled.h4`
   color: ${(props) => (props.selected ? "var(--blue)" : "var(--white)")};
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 500;
   transition: color 500ms;
   z-index: 2;
+  @media screen and (min-width: 720px) {
+    font-size: 18px;
+  }
 `;
