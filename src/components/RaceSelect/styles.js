@@ -4,9 +4,7 @@ export const AsideContainer = styled.aside`
     width: 280px;
     height: 80px;
 
-    position: fixed;
-    bottom: 0;
-    z-index: 3;
+    z-index: 4;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -18,6 +16,7 @@ export const AsideContainer = styled.aside`
         height: unset;
         bottom: 80%;
         right: 0;
+        position: fixed;
 
         width: 128px;
         justify-content: center;
@@ -32,6 +31,7 @@ export const MenuWrapper = styled.nav`
   display: flex;
   flex-direction: row;
   position: relative;
+    z-index: 4;
 
   .indicator {
     position: absolute;
@@ -40,12 +40,13 @@ export const MenuWrapper = styled.nav`
     background-color: var(--blue);
     height: 12px;
     width: 12px;
-    z-index: 4;
+    z-index: 5;
     transition: left 500ms;
-    transform: translateX(15px) rotate(45deg);
+    transform: translate(15px,0) rotate(45deg) ;
   }
 
   @media screen and (min-width: 720px) {
+    height: 358px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -80,13 +81,10 @@ export const MenuWrapper = styled.nav`
       position: absolute;
       height: 14px;
       width: 14px;
-      top: 21px;
       left: 91px;
       top: ${(props) => props.topIndicator};
-      transform: translateY(5px);
-      z-index: 4;
       transition: top 500ms;
-      transform: rotate(45deg);
+      transform: translate(0,-1px) rotate(45deg) ;
     }
   }
 `;

@@ -14,11 +14,16 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  position: absolute;
+  display: flex;
+  flex-direction: column;
   left: 3%;
   top: 7%;
   width: 80%;
   height: 80%;
+  gap: 2rem;
+  @media screen and (max-width: 720px) {
+    align-items: center;
+  }
 `;
 
 export const FormContainer = styled.form`
@@ -27,7 +32,7 @@ export const FormContainer = styled.form`
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  z-index: 2;
+  z-index: 0;
   width: 100%;
   height: 100%;
 
@@ -46,9 +51,10 @@ export const SectionTitle = styled.h2`
   text-transform: uppercase;
   font-weight: 500;
   position: absolute;
+  z-index: -1;
   background-color: var(--black);
   padding: 0 5px;
-  bottom: 97%;
+  bottom: 96%;
 `;
 
 export const Benefit = styled.span`
@@ -59,14 +65,22 @@ export const Benefit = styled.span`
 
 export const ButtonWrapperRight = styled.div`
   position: absolute;
-  right: 15px;
-  bottom: 15px;
+  right: 0;
+  bottom: 0;
+  @media screen and (min-width: 720px) {
+    right: 15px;
+    bottom: 15px;
+  }
 `;
 
 export const ButtonWrapperLeft = styled.div`
   position: absolute;
-  left: 15px;
-  bottom: 15px;
+  left: 0;
+  bottom: 0;
+  @media screen and (min-width: 720px) {
+    left: 15px;
+    bottom: 15px;
+  }
 `;
 
 export const RaceImage = styled.div`
@@ -74,11 +88,11 @@ export const RaceImage = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100%;
-  width: 100%;
+  height: 85%;
+  width: 85%;
   position: absolute;
   display: block;
-  z-index: 2;
+  z-index: 1;
   opacity: 0.2;
   @media screen and (min-width: 720px) {
     height: 100%;
@@ -115,26 +129,27 @@ export const Benefits = styled.div`
   display: flex;
   text-align: center;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   position: absolute;
   background-color: var(--white);
   left: 0;
-  top: 36%;
+  top: 33%;
   span{
+    width: 65%;
     color: var(--blue);
-    font-size: 18px;
+    font-size: 14px;
   }
   .disadvantage{
+    width: 100%;
     background-color: var(--black);
     color: var(--red);
   }
   @media screen and (min-width: 720px) {
-    width: 55%;
-  }
-  @media screen and (min-width: 1400px) {
     span{
-      font-size: 24px;
+      font-size: 18px;
     }
+    width: 55%;
   }
 `;
 
@@ -147,15 +162,12 @@ export const Description = styled.span`
   position: absolute;
   color: var(--white);
   text-align: center;
-  top: 57%;
+  top: 54%;
   z-index: 5;
   @media screen and (min-width: 720px) {
     left: 3rem;
     width: 65%;
     font-size: 18px;
     text-align: left;
-  }
-  @media screen and (min-width: 1400px) {
-    font-size: 22px;
   }
 `;

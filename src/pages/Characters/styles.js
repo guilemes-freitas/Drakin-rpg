@@ -89,10 +89,13 @@ export const PATitle = styled.h2`
 
 export const ButtonWrapper = styled.div`
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   position: absolute;
   bottom: 1rem;
   align-items: center;
+  @media screen and (min-width: 720px) {
+    gap: 2rem;
+  }
   @media screen and (min-width: 1400px) {
     bottom: 2rem;
   }
@@ -103,7 +106,10 @@ export const PAWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 5rem;
+  margin-bottom: -5rem;
+  @media screen and (min-width: 1400px) {
+    margin-bottom: 5rem;
+  }
 `
 
 export const ButtonArmorWrapper = styled.div`

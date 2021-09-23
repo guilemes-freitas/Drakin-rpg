@@ -75,8 +75,8 @@ const CreateCharacter = () => {
                 onChange={handleName}
                 error={error}
               ></Input>
+              <RaceSelect handleSelect={handleSelect} race={race}></RaceSelect>
             </Content>
-            <RaceSelect handleSelect={handleSelect} race={race}></RaceSelect>
             <ButtonWrapperRight>
               <ArrowButton type="submit"></ArrowButton>
             </ButtonWrapperRight>

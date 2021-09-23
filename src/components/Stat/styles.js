@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const FirstHexagon = styled.div`
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     clip-path: polygon(5% 25%, 50% 0, 95% 25%, 95% 75%, 50% 100%, 5% 75%);
     background-color: var(--white);
     background-color: ${props => props.colorChange > 5 && "var(--green)"};
@@ -23,8 +23,8 @@ export const FirstHexagon = styled.div`
 `;
 
 export const SecondHexagon = styled.div`
-    width: 95px;
-    height: 95px;
+    width: 75px;
+    height: 75px;
     clip-path: polygon(5% 25%, 50% 0, 95% 25%, 95% 75%, 50% 100%, 5% 75%);
     background-color: var(--green);
     background-color: ${props => props.colorChange !== 5 && "var(--white)"};
@@ -43,8 +43,8 @@ export const SecondHexagon = styled.div`
 `;
 
 export const ThirdHexagon = styled.div`
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     clip-path: polygon(5% 25%, 50% 0, 95% 25%, 95% 75%, 50% 100%, 5% 75%);
     background-color: var(--white);
     background-color: ${props => props.colorChange > 5 && "var(--green)"};
@@ -69,15 +69,18 @@ export const ThirdHexagon = styled.div`
 
 export const Button = styled.button`
     background-color: transparent;
-    font-size: 22px;
+    font-size: 16px;
     color: ${props => props.colorChange === 5 ? "var(--green)" : "var(--white)" };
     transition: color 500ms;
+    @media screen and (min-width: 720px) {
+        font-size: 22px;
+    }
 `
 export const Logo = styled.div`
-    font-size: 24px;
+    font-size: 18px;
     color: var(--green);
     color: ${props => props.colorChange !== 5 && "var(--white)"};
-    height: 22px;
+    height: 18px;
     transition: color 500ms;
     @media screen and (min-width: 720px) {
         font-size: 36px;
@@ -94,13 +97,16 @@ export const ButtonWrapper = styled.div`
     color: var(--green);
     color: ${props => props.colorChange !== 5 && "var(--white)"};
     transition: color 500ms;
-    font-size: 24px;
+    font-size: 14px;
+    @media screen and (min-width: 720px) {
+        font-size: 24px;
+    }
 `
 export const Type = styled.div`
     color: var(--green);
     color: ${props => props.colorChange !== 5 && "var(--white)"};
     transition: color 500ms;
-    font-size: 14px;
+    font-size: 12px;
     text-transform: capitalize;
     @media screen and (min-width: 720px) {
         font-size: 18px;

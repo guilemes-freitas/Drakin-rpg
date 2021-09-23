@@ -40,7 +40,7 @@ export const MenuWrapper = styled.nav`
     background-color: var(--blue);
     height: 14px;
     width: 14px;
-    z-index: 4;
+    z-index: 5;
     transition: left 500ms;
     transform: translateX(-4px);
   }
@@ -81,7 +81,6 @@ export const MenuWrapper = styled.nav`
       left: 91px;
       top: ${(props) => props.topIndicator};
       transform: translateY(5px);
-      z-index: 4;
       transition: top 500ms;
       transform: rotate(45deg);
     }

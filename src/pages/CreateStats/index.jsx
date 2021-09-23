@@ -1,9 +1,8 @@
-import {CharacterStatWrapper, CloudBackground, Container, Figure, LeftContainer, LeftSide, Middle, MiddleContainer, Points, RightSide, RightSideContainer, StatsContainer, StatWrapper, StatWrapperAbsolute} from "./styles";
+import {ButtonWrapperLeft, ButtonWrapperRight ,CharacterStatWrapper, CloudBackground, Container, Figure, LeftContainer, LeftSide, Middle, MiddleContainer, Points, RightSide, RightSideContainer, StatsContainer, StatWrapper, StatWrapperAbsolute} from "./styles";
 import { useState } from "react";
 import raceStatus from "../../utils/raceStatus";
 import ArrowButton from "../../components/ArrowButton";
 import { useHistory } from "react-router-dom";
-import { ButtonWrapperLeft, ButtonWrapperRight } from "../CreateCharacter/styles";
 import Stat from "../../components/Stat";
 import { useCharacters } from "../../providers/characters";
 import { FaPlusCircle, FaBolt, FaDumbbell, FaFistRaised, FaBrain, FaSun, FaCommentDots, FaEye, FaLightbulb } from "react-icons/fa";

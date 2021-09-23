@@ -9,6 +9,7 @@ export const Container = styled.div`
   position: relative;
   flex-direction: column;
   align-items: center;
+  z-index: 4;
 
 
   @media screen and (min-width: 720px) {
@@ -27,6 +28,7 @@ export const ItemBorder = styled.div`
   height: 18px;
   transform: rotate(45deg);
   cursor: pointer;
+    z-index: 4;
   @media screen and (min-width: 720px) {
     width: 22px;
     height: 22px;
@@ -49,7 +51,7 @@ export const Race = styled.h4`
   font-size: 12px;
   font-weight: 500;
   transition: color 500ms;
-  z-index: 2;
+  z-index: 5;
   @media screen and (min-width: 720px) {
     font-size: 18px;
   }

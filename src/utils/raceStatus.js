@@ -1,6 +1,6 @@
 import Imperial from "../assets/characterImage/Imperial.png";
 import Will from "../assets/characterImage/will.png";
-import Eleonore from "../assets/characterImage/eleonore.png";
+import Drakin from "../assets/characterImage/Drakin.png";
 import Sarkin from "../assets/characterImage/Sarkin.png";
 import Tiefling from "../assets/characterImage/tiefling.png";
 import Asrimer from "../assets/characterImage/Asrimer.png";
@@ -32,11 +32,11 @@ const raceStatus = [
     id: "3",
     race: "Drakin",
     region: "Drakimar",
-    image: Eleonore,
+    image: Drakin,
     benefits: [
       "+4 Força.",
       "+1 de vantagem em testes de Intimidação.",
-      "Dragon Skin: Habilidade Inata passiva. A pele dos Drakin pode dissipar magias, incluindo de personagens aliados. Essa habilidade não funciona contra magias refinadas, como encantamentos e maldições.",
+      "Dragon Skin: Passiva. A pele dos Drakin dissipa magias, incluindo de personagens aliados. Essa habilidade não funciona contra magias refinadas, como encantamentos e maldições.",
     ],
     proficiences:{},
     bonus:{strength:4},
