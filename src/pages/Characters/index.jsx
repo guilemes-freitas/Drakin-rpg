@@ -128,6 +128,7 @@ const Characters = () => {
     const handleEffect = (type,quantity,turn) => {
         character.effects[type].turns = turn
         character.effects[type].points = quantity
+        updateCharacter(character)
     }
 
     const handleSelect = (e) => {

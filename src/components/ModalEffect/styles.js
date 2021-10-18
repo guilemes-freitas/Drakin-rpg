@@ -92,9 +92,7 @@ export const CustomModal = styled(Modal)`
 
 export const BodyContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: space-around;
   position: relative;
   z-index: 350;
   min-height: 80px;
@@ -154,16 +152,45 @@ export const Title = styled.h2`
 `
 
 export const ButtonWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    color: var(--white);
-    transition: color 500ms;
-    font-size: 24px;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  transition: color 500ms;
+  font-size: 24px;
 `
 
 export const Button = styled.button`
-    background-color: transparent;
-    font-size: 22px;
-    color: var(--white);
-    transition: color 500ms;
+  background-color: transparent;
+  font-size: 22px;
+  color: var(--white);
+  transition: color 500ms;
 `
+
+export const QuantityButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`
+
+export const RadioButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  gap: 4px;
+`
+
+export const RadioButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  background-color: var(--black);
+  width: 125px;
+  height: 38px;
+  border: 2px solid ${props => props.checked ? "var(--white)" : "transparent"};
+`;
+
+export const EffectImage = styled.img`
+  width: 32px;
+  height: 32px;
+`;

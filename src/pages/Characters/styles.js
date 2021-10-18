@@ -19,7 +19,7 @@ export const Content = styled.div`
   gap: 1rem;
   z-index: 2;
   width: 100%;
-  height: 80%;
+  height: 45%;
   @media screen and (min-width: 1400px) {
     gap: 3rem;
     height: 100%;

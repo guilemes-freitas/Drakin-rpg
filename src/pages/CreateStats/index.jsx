@@ -74,7 +74,10 @@ const CreateStats = () => {
             gold:raceBonuses[0]?.bonus.gold ? raceBonuses[0].bonus.gold + 150 : 150,
             experience:0,
             effects:{
-                stun:false,
+                stun:{
+                    isEffected:false,
+                    turns:0
+                },
                 bleed:{
                     points:0,
                     turns:0

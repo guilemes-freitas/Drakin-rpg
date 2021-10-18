@@ -11,6 +11,7 @@ import { FaTimes } from "react-icons/fa";
 import "antd/dist/antd.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useState } from "react";
+import {handleDecrease, handleDecrease10, handleDecrease100, handleIncrease,handleIncrease10, handleIncrease100} from "../../utils/IncreaseDecrease";
 
 const Modal = ({ isModalVisible = false,confirmFunc,handlePenetration=false,title,text, setIsModalVisible,color }) => {
   const [statValue,setStatValue] = useState(0);
@@ -23,54 +24,6 @@ const Modal = ({ isModalVisible = false,confirmFunc,handlePenetration=false,titl
     setArmorPenetration(!armorPenetration)
     setPenetration(0)
   }
-
-  const handlePenetrationDecrease = () => {
-    if(penetration > minValue){
-      setPenetration(penetration - 1)
-    }
-  };
-
-  const handlePenetrationIncrease = () =>{
-    if(penetration < maxValue){
-      setPenetration(penetration + 1)
-    }
-  };
-
-  const handleDecrease = () => {
-    if(statValue > minValue){
-      setStatValue(statValue - 1)
-    }
-  };
-
-  const handleIncrease = () =>{
-    if(statValue < maxValue){
-      setStatValue(statValue + 1)
-    }
-  };
-
-  const handleIncrease100 = () =>{
-    if((statValue+100) <= maxValue){
-      setStatValue(statValue + 100)
-    }
-  };
-
-  const handleIncrease10 = () =>{
-    if((statValue+10) <= maxValue){
-      setStatValue(statValue + 10)
-    }
-  };
-
-  const handleDecrease10 = () =>{
-    if((statValue-10) >= minValue){
-      setStatValue(statValue - 10)
-    }
-  };
-
-  const handleDecrease100 = () =>{
-    if((statValue-100) >= minValue){
-      setStatValue(statValue - 100)
-    }
-  };
 
   const handleCloseModal = () => {
     setStatValue(0)
@@ -85,7 +38,6 @@ const Modal = ({ isModalVisible = false,confirmFunc,handlePenetration=false,titl
     setIsModalVisible(false);
     handlePenetration && handlePenetration(penetration)
   };
-
 
   return (
     <CustomModal
@@ -133,14 +85,14 @@ const Modal = ({ isModalVisible = false,confirmFunc,handlePenetration=false,titl
         {armorPenetration && <ButtonWrapper>
           <Button 
                 disabled={penetration === minValue}
-                onClick={handlePenetrationDecrease}
+                onClick={() => setPenetration(handleDecrease(statValue,minValue))}
             >
             <FaChevronLeft></FaChevronLeft>
             </Button>
             {penetration}
             <Button 
                 disabled={penetration === maxValue}
-                onClick={handlePenetrationIncrease}
+                onClick={() => setPenetration(handleIncrease(statValue,maxValue))}
             >
             <FaChevronRight></FaChevronRight>
             </Button>
@@ -148,25 +100,25 @@ const Modal = ({ isModalVisible = false,confirmFunc,handlePenetration=false,titl
         <ButtonWrapper>
           <Button 
                   disabled={statValue+100 > maxValue}
-                  onClick={handleIncrease100}
+                  onClick={() => setStatValue(handleIncrease100(statValue,maxValue))}
               >
               +100
           </Button>
           <Button 
                   disabled={statValue+10 > maxValue}
-                  onClick={handleIncrease10}
+                  onClick={() => setStatValue(handleIncrease10(statValue,maxValue))}
               >
               +10
           </Button>
           <Button 
                   disabled={statValue-10 < minValue}
-                  onClick={handleDecrease10}
+                  onClick={() => setStatValue(handleDecrease10(statValue,minValue))}
               >
               -10
           </Button>
           <Button 
                   disabled={statValue-100 < minValue}
-                  onClick={handleDecrease100}
+                  onClick={() => setStatValue(handleDecrease100(statValue,minValue))}
               >
               -100
           </Button>
@@ -175,14 +127,14 @@ const Modal = ({ isModalVisible = false,confirmFunc,handlePenetration=false,titl
             <h3>{text}</h3>
             <Button 
                 disabled={statValue === minValue}
-                onClick={handleDecrease}
+                onClick={() => setStatValue(handleDecrease(statValue,minValue))}
             >
             <FaChevronLeft></FaChevronLeft>
             </Button>
             {statValue}
             <Button 
                 disabled={statValue === maxValue}
-                onClick={handleIncrease}
+                onClick={() => setStatValue(handleIncrease(statValue,maxValue))}
             >
             <FaChevronRight></FaChevronRight>
             </Button>
