@@ -4,8 +4,8 @@ import TriangleButtonLeft from "../../assets/images/TriangleButtonLeft.svg";
 
 export const ButtonItem = styled.button`
   background-color: transparent;
-  width: 55px;
-  height: 50px;
+  width: 44px;
+  height: 36px;
   @media screen and (min-width: 720px) {
     width: 80px;
     height: 70px;

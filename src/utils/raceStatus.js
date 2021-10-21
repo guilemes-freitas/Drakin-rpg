@@ -2,7 +2,7 @@ import Imperial from "../assets/characterImage/Imperial.png";
 import Will from "../assets/characterImage/will.png";
 import Drakin from "../assets/characterImage/Drakin.png";
 import Sarkin from "../assets/characterImage/Sarkin.png";
-import Tiefling from "../assets/characterImage/tiefling.png";
+import Tiefling from "../assets/characterImage/Tiefling.png";
 import Asrimer from "../assets/characterImage/Asrimer.png";
 
 const raceStatus = [
@@ -67,10 +67,10 @@ const raceStatus = [
     image: Tiefling,
     benefits: [
       "+3 Fé.",
-      "+4 de resistência contra maldições.",
-      "Dark Eyes: Por conta de seus olhos negros os Tieflings conseguem ver no escuro.",
-      "Light Feet: Tieflings estão acostumados a se esconder, por conta disso recebem +2 em testes de furtividade.",
-      "Spiritual Presence: Duas vezes por descanso longo, pode ver espíritos e se comunicar com eles.",
+      "+4 resistência á maldições.",
+      "Dark Eyes: Visão noturna.",
+      "Light Feet: +2 em testes de furtividade.",
+      "Duas vezes por descanso longo, pode se comunicar com espíritos.",
     ],
     proficiences:{},
     bonus:{faith:3},
@@ -91,7 +91,23 @@ const raceStatus = [
     proficiences:{"Sobrevivência":1},
     bonus:{faith:2},
     resistences:{},
-    description: "Habitante da região de Mir’ad. Seu povo tem uma conexão muito forte com a natureza.",
+    description: "Habitante da região de Mir’ad. Os Asrimer possuem grande devoção a Serpente Primordial, eles acreditam que ela é a criadora dos humanos. A Serpente Primordial também é conhecida pela criação da magia de sangue, por conta disso os Asrimer acreditam que os Sarkin sejam encarnações da Serpente.",
+  },
+  {
+    id: "7",
+    race: "Elfo",
+    region: "Continente Élfico",
+    image: Asrimer,
+    benefits: [
+      "+2 Inteligência",
+      "+3 destreza",
+      "+3 em testes de percepção.",
+      "Mana reading: Consegue sentir as emoções de uma criatura",
+    ],
+    proficiences:{},
+    bonus:{intelligence:2,dexterity:3},
+    resistences:{},
+    description: "É dito que os elfos já existiam muito antes do primeiro humano surgir, visto que, todos os registros históricos foram perdidos, não se sabe muito sobre a veracidade desse fato.",
   },
 ];
 

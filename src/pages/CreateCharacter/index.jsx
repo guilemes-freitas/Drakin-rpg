@@ -16,6 +16,7 @@ import raceStatus from "../../utils/raceStatus";
 import ArrowButton from "../../components/ArrowButton";
 import PageBorder from "../../components/PageBorder";
 import RaceSelect from "../../components/RaceSelect";
+import Button from "../../components/Button";
 import { useHistory } from "react-router-dom";
 import { useCharacters } from "../../providers/characters";
 
@@ -27,6 +28,7 @@ const CreateCharacter = () => {
   const [name, setName] = useState("");
   const [error, setError] = useState("");
   const {savePreCharacter} = useCharacters()
+  const [display,setDisplay] = useState(false)
 
   const handleSelect = (e) => {
     const newRaceInfo = raceStatus.filter((raceInfo) => {
@@ -59,9 +61,11 @@ const CreateCharacter = () => {
   return (
     <Container>
       <RaceImage image={raceInfo && raceInfo.image}></RaceImage>
-      <Benefits>{raceInfo && benefits.map((benefit,index) => {return <span key={index}>{benefit}</span>})}
+      <Button onClickFunc={() => setDisplay(!display)} color={"--blue"} size={"small"}>{display ? "Status" : "Descrição"}</Button>
+      <Benefits display={!display}>{raceInfo && benefits.map((benefit,index) => {return <span key={index}>{benefit}</span>})}
       {disadvantages && disadvantages.map((disadvantage,index) => {return <span key={index} className="disadvantage">{disadvantage}</span>})}</Benefits>
-        {raceInfo && <Description>{raceInfo.description}</Description>}
+      
+      {raceInfo && <Description display={display}>{raceInfo.description}</Description>}
       
       <PageBorder>
           <FormContainer onSubmit={onSubmitFunction}>

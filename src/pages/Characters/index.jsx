@@ -1,5 +1,5 @@
 
-import { ButtonArmorWrapper, ButtonWrapper, Container, Content, CurrentStatContainer, EffectsWrapper, PATitle, PAWrapper, Return, SectionTitle, StatContainer, StatWrapper, TurnWrapper, } from "./styles";
+import { ButtonArmorWrapper, ButtonWrapper, Container, Content, CurrentStatContainer, EffectImage, EffectFigure, EffectsWrapper, PATitle, PAWrapper, Return, SectionTitle, StatContainer, StatWrapper, TurnWrapper, } from "./styles";
 import PageBorder from "../../components/PageBorder";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
@@ -12,6 +12,9 @@ import Button from "../../components/Button";
 import ModalExtraArmor from "../../components/ModalExtraArmor";
 import ModalEffect from "../../components/ModalEffect";
 import ExtraStat from "../../components/ExtraStat";
+import Blight from "../../assets/images/Blight.png"
+import Bleed from "../../assets/images/Bleed.png"
+import Burning from "../../assets/images/Burning.png"
 
 const Characters = () => {
     const [isDamageVisible, setIsDamageVisible] = useState(false);
@@ -45,13 +48,17 @@ const Characters = () => {
 
     const handleDamage = (damage) =>{
         if (damage >= character.extraArmor.points){
-            damage = damage - character.extraArmor.points
+            damage -= character.extraArmor.points
             character.extraArmor.points = 0
             character.extraArmor.turns = 0
 
+        } else if (damage < character.extraArmor.points) {
+            character.extraArmor.points -= damage
+            damage = 0
+            updateCharacter(character)
         }
         if (damage > character.currentArmor){
-            damage = damage - character.currentArmor
+            damage -= character.currentArmor
             character.currentArmor = 0
             if (damage >= character.currentHP){
                 damage = damage - character.currentHP
@@ -126,8 +133,10 @@ const Characters = () => {
     }
 
     const handleEffect = (type,quantity,turn) => {
-        character.effects[type].turns = turn
-        character.effects[type].points = quantity
+        if (character.effects[type].turns < turn){
+            character.effects[type].turns = turn
+        }
+        character.effects[type].points += quantity
         updateCharacter(character)
     }
 
@@ -168,6 +177,15 @@ const Characters = () => {
                                     <CharacterStat statValue={character?.stats.charisma} statType={"Carisma"}></CharacterStat>
                                     <CharacterStat statValue={character?.stats.perception} statType={"Percepção"}></CharacterStat>
                                 </StatWrapper>
+                                <EffectsWrapper>
+                                    <Button whiteSchema size={'medium'} onClickFunc={() => setIsEffectModalVisible(!isEffectModalVisible)}>Efeitos</Button>
+                                    {character?.effects.bleed.turns > 0 && 
+                                    <EffectFigure><EffectImage src={Bleed} alt="Sangramento" title={`Turnos: ${character.effects.bleed.turns}`}/><figcaption>{character.effects.bleed.points}</figcaption></EffectFigure>}
+                                    {character?.effects.blight.turns > 0 && 
+                                    <EffectFigure><EffectImage src={Blight} alt="Envenenamento" title={`Turnos: ${character.effects.blight.turns}`}/><figcaption>{character.effects.blight.points}</figcaption></EffectFigure>}
+                                    {character?.effects.burning.turns > 0 && 
+                                    <EffectFigure><EffectImage src={Burning} alt="Sangramento" title={`Turnos: ${character.effects.burning.turns}`}/><figcaption>{character.effects.burning.points}</figcaption></EffectFigure>}
+                                </EffectsWrapper>
                             </StatContainer>
                             {character?.currentHP > 0 ?
                             <>
@@ -200,9 +218,6 @@ const Characters = () => {
                             <TurnWrapper>
                                 <Button color={'--green'} size={'medium'} onClickFunc = {handleNextTurn}>Inicio de turno</Button>
                             </TurnWrapper>
-                            <EffectsWrapper>
-                                <Button whiteSchema size={'medium'} onClickFunc={() => setIsEffectModalVisible(!isEffectModalVisible)}>Efeitos</Button>
-                            </EffectsWrapper>
                             
                         </>
                     }

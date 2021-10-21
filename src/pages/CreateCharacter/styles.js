@@ -8,8 +8,16 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  >button{
+    z-index: 5;
+    position: absolute;
+    top: 38%;
+  }
   @media screen and (min-width: 720px) {
     padding: 0px 30px;
+    >button{
+      display: none;
+    }
   }
 `;
 
@@ -93,7 +101,7 @@ export const RaceImage = styled.div`
   position: absolute;
   display: block;
   z-index: 1;
-  opacity: 0.2;
+  opacity: 0.4;
   @media screen and (min-width: 720px) {
     height: 100%;
     z-index: 4;
@@ -132,9 +140,11 @@ export const Benefits = styled.div`
   align-items: center;
   width: 100%;
   position: absolute;
+  display: ${props => props.display ? "inherit" : "none"};
   background-color: var(--white);
   left: 0;
-  top: 33%;
+  top: 49%;
+  z-index: 5;
   span{
     width: 65%;
     color: var(--blue);
@@ -146,6 +156,9 @@ export const Benefits = styled.div`
     color: var(--red);
   }
   @media screen and (min-width: 720px) {
+  z-index: 2;
+    display: inherit;
+    top: 35%;
     span{
       font-size: 18px;
     }
@@ -161,13 +174,16 @@ export const Description = styled.span`
   font-size: 14px;
   position: absolute;
   color: var(--white);
+  display: ${props => props.display ? "inherit" : "none"};
   text-align: center;
-  top: 54%;
+  top: 49%;
   z-index: 5;
   @media screen and (min-width: 720px) {
+    display: inherit;
     left: 3rem;
     width: 65%;
     font-size: 18px;
     text-align: left;
+    top: 57%;
   }
 `;

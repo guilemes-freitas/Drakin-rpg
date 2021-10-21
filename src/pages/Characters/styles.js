@@ -131,6 +131,29 @@ export const EffectsWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content:  space-around;
-  position: absolute;
-  right: 8rem;
+  flex-direction: column;
+`
+
+export const EffectFigure = styled.figure`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  >figcaption{
+    position: absolute;
+    left: 18px;
+    bottom: 5px;
+    user-select: none;
+    font-size: 18px;
+    color: var(--white);
+    text-shadow: -1px -1px 0 var(--black), 1px -1px 0 var(--black), -1px 1px 0 var(--black), 1px 1px 0 var(--black);
+  }
+`;
+
+export const EffectImage = styled.img`
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `

@@ -42,7 +42,7 @@ export const MenuWrapper = styled.nav`
     width: 12px;
     z-index: 5;
     transition: left 500ms;
-    transform: translate(15px,0) rotate(45deg) ;
+    transform: translate(12px,0) rotate(45deg) ;
   }
 
   @media screen and (min-width: 720px) {
@@ -51,7 +51,7 @@ export const MenuWrapper = styled.nav`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 44px;
+    gap: 30px;
     position: absolute;
     height: inherit;
     padding-right: 0;
@@ -84,7 +84,7 @@ export const MenuWrapper = styled.nav`
       left: 91px;
       top: ${(props) => props.topIndicator};
       transition: top 500ms;
-      transform: translate(0,-1px) rotate(45deg) ;
+      transform: translate(0,0) rotate(45deg) ;
     }
   }
 `;
