@@ -1,5 +1,7 @@
 
-import { ButtonArmorWrapper, ButtonWrapper, Container, Content, CurrentStatContainer, EffectImage, EffectFigure, EffectsWrapper, PATitle, PAWrapper, Return, SectionTitle, StatContainer, StatWrapper, TurnWrapper, } from "./styles";
+import { ButtonArmorWrapper, ButtonWrapper, Container, Content, 
+    CurrentStatContainer, EffectImage, EffectFigure, EffectsWrapper, PATitle, 
+    PAWrapper, Return, SectionTitle, StatContainer, StatWrapper, TurnWrapper } from "./styles";
 import PageBorder from "../../components/PageBorder";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
@@ -15,6 +17,7 @@ import ExtraStat from "../../components/ExtraStat";
 import Blight from "../../assets/images/Blight.png"
 import Bleed from "../../assets/images/Bleed.png"
 import Burning from "../../assets/images/Burning.png"
+import {handlePenetrationCalc, handleDamageCalc, handleCureCalc, handleNextTurn, handleRecoverArmorCalc, handleMaxArmorCalc, handleExtraArmorCalc, handleEffectCalc} from "../../utils/CharacterCalculations"
 
 const Characters = () => {
     const [isDamageVisible, setIsDamageVisible] = useState(false);
@@ -23,123 +26,29 @@ const Characters = () => {
     const [isMaxArmorVisible, setIsMaxArmorVisible] = useState(false);
     const [isExtraArmorVisible, setIsExtraArmorVisible] = useState(false);
     const [isEffectModalVisible, setIsEffectModalVisible] = useState(false);
-    const {characters, updateCharacter} = useCharacters();
+    const {characters, updateCharacter, removeCharacter} = useCharacters();
     const [characterName, setCharacterName] = useState("");
     const [character, setCharacter] = useState(false)
     const [PAs, setPAs] = useState([])
     const [atualPA, setAtualPA] = useState(3)
 
-    const handleValue = (value) =>{
+    const handlePAValue = (value) =>{
         value >= atualPA ? setAtualPA(value+1) : setAtualPA(value)
     }
+    
+    const handlePenetration = (damage) => { updateCharacter(handlePenetrationCalc(damage,character)) }
+    
+    const handleDamage = (damage) => { updateCharacter(handleDamageCalc(damage,character)) }
+    
+    const handleCure = (cure) => { updateCharacter(handleCureCalc(cure,character)) }
 
-    const handlePenetration = (damage) =>{
-        if (damage >= character.currentHP){
-            damage = damage - character.currentHP
-            if(damage > (character.maxHP/2)){
-                console.log('morte instantanea!')
-            }
-            character.currentHP = 0
-        }else{
-            character.currentHP -= damage
-        }
-        updateCharacter(character)
-    }
+    const handleRecoverArmor = (armor) => { updateCharacter(handleRecoverArmorCalc(armor, character)) }
 
-    const handleDamage = (damage) =>{
-        if (damage >= character.extraArmor.points){
-            damage -= character.extraArmor.points
-            character.extraArmor.points = 0
-            character.extraArmor.turns = 0
+    const handleMaxArmor = (armor) => { updateCharacter(handleMaxArmorCalc(armor,character)) }
 
-        } else if (damage < character.extraArmor.points) {
-            character.extraArmor.points -= damage
-            damage = 0
-            updateCharacter(character)
-        }
-        if (damage > character.currentArmor){
-            damage -= character.currentArmor
-            character.currentArmor = 0
-            if (damage >= character.currentHP){
-                damage = damage - character.currentHP
-                if(damage > (character.maxHP/2)){
-                    console.log('morte instantanea!')
-                }
-                character.currentHP = 0
-            }else{
-                character.currentHP -= damage
-            }
-        } else if (damage <= character.currentArmor){
-            character.currentArmor -= damage 
-        }
-        updateCharacter(character)
-    }
+    const handleExtraArmor = (armor,turns) => { updateCharacter(handleExtraArmorCalc(armor,turns,character)) }
 
-    const handleCure = (cure) =>{
-        if (cure+character.currentHP > character.maxHP){
-            character.currentHP = character.maxHP
-        } else {
-            character.currentHP += cure 
-        }
-        updateCharacter(character)
-    }
-
-    const handleRecoverArmor = (armor) =>{
-        if (armor+character.currentArmor > character.maxArmor){
-            character.currentArmor = character.maxArmor
-        } else {
-            character.currentArmor += armor 
-        }
-        updateCharacter(character)
-    }
-
-    const handleMaxArmor = (armor) =>{
-        character.maxArmor = armor
-        character.currentArmor = armor
-        updateCharacter(character)
-    }
-
-    const handleExtraArmor = (armor,turns) =>{
-        if(turns < character.extraArmor.turns){
-            turns = character.extraArmor.turns
-        }
-        armor += character.extraArmor.points
-
-        character.extraArmor = {points:armor,
-                                turns:turns}
-        updateCharacter(character)
-    }
-
-    const handleNextTurn = () =>{
-        const damageEffects = ['bleed','blight','burning']
-        damageEffects.map((effect) => {
-            if(character.effects[effect].turns > 0){
-                character.effects[effect].turns -= 1
-                handlePenetration(character.effects[effect].points)
-            }
-            if(character.effects[effect].turns === 0){
-                character.effects[effect] = {points: 0, turns:0}
-            }
-            return character
-        })
-
-        if(character.extraArmor.turns > 0){
-            character.extraArmor.turns -= 1
-        }
-        if(character.extraArmor.turns === 0){
-            character.extraArmor.points = 0
-        }
-        updateCharacter(character)
-    }
-
-    const handleEffect = (type,quantity,turn) => {
-        if (character.effects[type].turns < turn){
-            character.effects[type].turns = turn
-        }
-        character.effects[type].points += quantity
-        updateCharacter(character)
-    }
-
+    const handleEffect = (type,quantity,turn) => { updateCharacter(handleEffectCalc(type,quantity,turn,character)) }
     const handleSelect = (e) => {
         setCharacterName(e.target.value);
         const characterArray = characters.filter((character)=>{
@@ -199,12 +108,15 @@ const Characters = () => {
                                         <PATitle>PA Atual</PATitle>
                                         <CurrentStatContainer>
                                             {PAs.map(index =>{
-                                                return <PA key={index} PAvalue={index} used={atualPA} handleValue={handleValue}></PA>
+                                                return <PA key={index} PAvalue={index} used={atualPA} handleValue={handlePAValue}></PA>
                                             })}
                                         </CurrentStatContainer>
                                     </PAWrapper>
                             </> :
-                            <h2>morreu</h2>
+                            <>
+                                <h2>morreu</h2>
+                                <Button color={'--red'} size={'medium'} onClickFunc={() => removeCharacter(character)}>Deletar personagem</Button>
+                            </>
                             }
                             <ButtonWrapper>
                                 <Button color={'--red'} size={'big'} onClickFunc = {() =>setIsDamageVisible(!isDamageVisible)}>Receber dano</Button>
@@ -216,7 +128,7 @@ const Characters = () => {
                                 </ButtonArmorWrapper>
                             </ButtonWrapper>
                             <TurnWrapper>
-                                <Button color={'--green'} size={'medium'} onClickFunc = {handleNextTurn}>Inicio de turno</Button>
+                                <Button color={'--green'} size={'medium'} onClickFunc = {() => updateCharacter(handleNextTurn(character))}>Inicio de turno</Button>
                             </TurnWrapper>
                             
                         </>

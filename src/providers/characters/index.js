@@ -7,6 +7,7 @@ export const CharacterProvider = ({ children }) => {
 
   const addCharacter = (newCharacter) => {
     let list = JSON.parse(localStorage.getItem(`@Drakin:Characters`)) || [];
+    // Ordenando a lista para os ids ficarem em ordem crescente
     list.sort((a,b)=>{
       return a.id - b.id
     })
@@ -19,6 +20,7 @@ export const CharacterProvider = ({ children }) => {
 
   const removeCharacter = (deletedCharacter) =>{
     let list = characters.filter((filtered) => filtered.id !== deletedCharacter.id);
+    // Ordenando a lista para os ids ficarem em ordem crescente
     list.sort((a,b)=>{
       return a.id - b.id
     })

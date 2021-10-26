@@ -11,7 +11,8 @@ import { FaTimes } from "react-icons/fa";
 import "antd/dist/antd.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useState } from "react";
-import {handleDecrease, handleDecrease10, handleDecrease100, handleIncrease,handleIncrease10, handleIncrease100} from "../../utils/IncreaseDecrease";
+import {handleDecrease, handleDecrease10, handleDecrease100, 
+  handleIncrease,handleIncrease10, handleIncrease100} from "../../utils/IncreaseDecrease";
 
 const Modal = ({ isModalVisible = false,confirmFunc,handlePenetration=false,title,text, setIsModalVisible,color }) => {
   const [statValue,setStatValue] = useState(0);
@@ -85,14 +86,14 @@ const Modal = ({ isModalVisible = false,confirmFunc,handlePenetration=false,titl
         {armorPenetration && <ButtonWrapper>
           <Button 
                 disabled={penetration === minValue}
-                onClick={() => setPenetration(handleDecrease(statValue,minValue))}
+                onClick={() => setPenetration(handleDecrease(penetration,minValue))}
             >
             <FaChevronLeft></FaChevronLeft>
             </Button>
             {penetration}
             <Button 
                 disabled={penetration === maxValue}
-                onClick={() => setPenetration(handleIncrease(statValue,maxValue))}
+                onClick={() => setPenetration(handleIncrease(penetration,maxValue))}
             >
             <FaChevronRight></FaChevronRight>
             </Button>
