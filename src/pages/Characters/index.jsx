@@ -18,6 +18,7 @@ import Blight from "../../assets/images/Blight.png"
 import Bleed from "../../assets/images/Bleed.png"
 import Burning from "../../assets/images/Burning.png"
 import {handlePenetrationCalc, handleDamageCalc, handleCureCalc, handleNextTurn, handleRecoverArmorCalc, handleMaxArmorCalc, handleExtraArmorCalc, handleEffectCalc} from "../../utils/CharacterCalculations"
+import LevelUp from "../../components/LevelUp";
 
 const Characters = () => {
     const [isDamageVisible, setIsDamageVisible] = useState(false);
@@ -26,9 +27,8 @@ const Characters = () => {
     const [isMaxArmorVisible, setIsMaxArmorVisible] = useState(false);
     const [isExtraArmorVisible, setIsExtraArmorVisible] = useState(false);
     const [isEffectModalVisible, setIsEffectModalVisible] = useState(false);
-    const {characters, updateCharacter, removeCharacter} = useCharacters();
+    const {character, setCharacter,characters, updateCharacter, removeCharacter} = useCharacters();
     const [characterName, setCharacterName] = useState("");
-    const [character, setCharacter] = useState(false)
     const [PAs, setPAs] = useState([])
     const [atualPA, setAtualPA] = useState(3)
 
@@ -59,8 +59,8 @@ const Characters = () => {
             PAsTotal.push(i)
         }
         setPAs(PAsTotal)
+        setAtualPA(PAsTotal)
         setCharacter(characterArray[0])
-        console.log(characterArray[0])
     };
 
     const history = useHistory();
@@ -96,27 +96,29 @@ const Characters = () => {
                                     <EffectFigure><EffectImage src={Burning} alt="Sangramento" title={`Turnos: ${character.effects.burning.turns}`}/><figcaption>{character.effects.burning.points}</figcaption></EffectFigure>}
                                 </EffectsWrapper>
                             </StatContainer>
-                            {character?.currentHP > 0 ?
-                            <>
-                                <CurrentStatContainer>
-                                    <CharacterStat statValue={character?.currentHP} statType={"Vida Atual"} type2></CharacterStat>
-                                    <CharacterStat statValue={character?.currentArmor} statType={"Armadura"} type2 blueSchema></CharacterStat>
-                                    <ExtraStat statValue={character?.extraArmor.points} statType={"Extra"} blueSchema></ExtraStat>
-                                </CurrentStatContainer>
-                                    <PAWrapper>
-
-                                        <PATitle>PA Atual</PATitle>
+                            {
+                                character?.currentHP > 0  ?
+                                    <>
+                                        <LevelUp character={character}/>
                                         <CurrentStatContainer>
-                                            {PAs.map(index =>{
-                                                return <PA key={index} PAvalue={index} used={atualPA} handleValue={handlePAValue}></PA>
-                                            })}
+                                            <CharacterStat statValue={character?.currentHP} statType={"Vida Atual"} type2></CharacterStat>
+                                            <CharacterStat statValue={character?.currentArmor} statType={"Armadura"} type2 blueSchema></CharacterStat>
+                                            <ExtraStat statValue={character?.extraArmor.points} statType={"Extra"} blueSchema></ExtraStat>
                                         </CurrentStatContainer>
-                                    </PAWrapper>
-                            </> :
-                            <>
-                                <h2>morreu</h2>
-                                <Button color={'--red'} size={'medium'} onClickFunc={() => removeCharacter(character)}>Deletar personagem</Button>
-                            </>
+                                            <PAWrapper>
+
+                                                <PATitle>PA Atual</PATitle>
+                                                <CurrentStatContainer>
+                                                    {PAs.map(index =>{
+                                                        return <PA key={index} PAvalue={index} used={atualPA} handleValue={handlePAValue}></PA>
+                                                    })}
+                                                </CurrentStatContainer>
+                                            </PAWrapper>
+                                    </> :
+                                    <>
+                                        <h2>morreu</h2>
+                                        <Button color={'--red'} size={'medium'} onClickFunc={() => removeCharacter(character)}>Deletar personagem</Button>
+                                    </>
                             }
                             <ButtonWrapper>
                                 <Button color={'--red'} size={'big'} onClickFunc = {() =>setIsDamageVisible(!isDamageVisible)}>Receber dano</Button>

@@ -3,6 +3,7 @@ import Characters from "../pages/Characters";
 import CreateCharacter from "../pages/CreateCharacter";
 import CreateStats from "../pages/CreateStats";
 import Dashboard from "../pages/Dashboard";
+import LevelUpCharacter from "../pages/LevelUpCharacter";
 
 const Routes = () => {
   return (
@@ -18,6 +19,9 @@ const Routes = () => {
         </Route>
         <Route path="/stats">
             <CreateStats></CreateStats>
+        </Route>
+        <Route path="/levelup">
+            <LevelUpCharacter></LevelUpCharacter>
         </Route>
     </Switch>
   );

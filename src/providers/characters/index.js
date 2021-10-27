@@ -4,6 +4,7 @@ export const CharacterContext = createContext([]);
 export const CharacterProvider = ({ children }) => {
   const [characters, setCharacters] = useState(JSON.parse(localStorage.getItem(`@Drakin:Characters`)) || []);
   const [preCharacter, setPreCharacter] = useState(JSON.parse(localStorage.getItem(`@Drakin:PreCharacter`)) || {});
+  const [character, setCharacter] = useState(false);
 
   const addCharacter = (newCharacter) => {
     let list = JSON.parse(localStorage.getItem(`@Drakin:Characters`)) || [];
@@ -54,11 +55,12 @@ export const CharacterProvider = ({ children }) => {
     })
     localStorage.setItem(`@Drakin:Characters`, JSON.stringify(list));
     setCharacters(list);
+    setCharacter(data);
   }
 
   return (
     <CharacterContext.Provider
-      value={{ characters, addCharacter, removeCharacter, preCharacter, updateCharacter, savePreCharacter}}
+      value={{ characters, addCharacter, removeCharacter, preCharacter, updateCharacter, savePreCharacter,character,setCharacter}}
     >
       {children}
     </CharacterContext.Provider>
