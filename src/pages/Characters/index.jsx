@@ -63,6 +63,10 @@ const Characters = () => {
         setCharacter(characterArray[0])
     };
 
+    const handleRemove = () =>{
+        removeCharacter(character);
+        setCharacter(false);
+    }
     const history = useHistory();
     return (
         <Container>
@@ -117,7 +121,7 @@ const Characters = () => {
                                     </> :
                                     <>
                                         <h2>morreu</h2>
-                                        <Button color={'--red'} size={'medium'} onClickFunc={() => removeCharacter(character)}>Deletar personagem</Button>
+                                        <Button color={'--red'} size={'medium'} onClickFunc={handleRemove}>Deletar personagem</Button>
                                     </>
                             }
                             <ButtonWrapper>
