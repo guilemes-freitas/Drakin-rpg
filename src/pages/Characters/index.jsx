@@ -134,7 +134,7 @@ const Characters = () => {
                                 </ButtonArmorWrapper>
                             </ButtonWrapper>
                             <TurnWrapper>
-                                <Button color={'--green'} size={'medium'} onClickFunc = {() => updateCharacter(handleNextTurn(character))}>Inicio de turno</Button>
+                                <Button color={'--green'} size={'medium'} onClickFunc = {() => updateCharacter(handleNextTurn(character))}>Próximo turno</Button>
                             </TurnWrapper>
                             
                         </>

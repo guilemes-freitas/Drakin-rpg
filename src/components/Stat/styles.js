@@ -12,8 +12,8 @@ export const FirstHexagon = styled.div`
     justify-content: center;
     transition: background-color 1s;
     @media screen and (min-width: 720px) {
-        width: 120px;
-        height: 120px;
+        width: 110px;
+        height: 110px;
     }
     @media screen and (min-width: 1400px) {
         width: 150px;
@@ -33,8 +33,8 @@ export const SecondHexagon = styled.div`
     justify-content: center;
     transition: background-color 1s;
     @media screen and (min-width: 720px) {
-        width: 115px;
-        height: 115px;
+        width: 105px;
+        height: 105px;
     }
     @media screen and (min-width: 1400px) {
         width: 145px;
@@ -56,9 +56,8 @@ export const ThirdHexagon = styled.div`
     gap: 0.2rem;
     transition: background-color 1s;
     @media screen and (min-width: 720px) {
-        width: 110px;
-        height: 110px;
-        gap: 0.5rem;
+        width: 100px;
+        height: 100px;
     }
     @media screen and (min-width: 1400px) {
         width: 140px;
@@ -83,8 +82,8 @@ export const Logo = styled.div`
     height: 18px;
     transition: color 500ms;
     @media screen and (min-width: 720px) {
-        font-size: 36px;
-        height: 35px;
+        font-size: 30px;
+        height: 30px;
     }
     @media screen and (min-width: 1400px) {
         font-size: 48px;

@@ -9,14 +9,14 @@ export const Container = styled.button`
     justify-content: center;
     background-color: var(${props => props.whiteSchema ? '--white' : props.color});
     @media screen and (min-width: 720px) {
-        width: ${props => props.size === 'big' ? '130px' : props.size === 'medium' ? '105px' : '100px'};
+        width: ${props => props.size === 'big' ? '105px' : props.size === 'medium' ? '100px' : '95px'};
         height: ${props => props.size === 'big' ? '66px' : props.size === 'medium' ? '66px' : '54px'};
-        font-size: ${props => props.size === 'big' ? '18px' : props.size === 'medium' ? '18px' : '12px'};
+        font-size: ${props => props.size === 'big' ? '16px' : props.size === 'medium' ? '14px' : '12px'};
     }
     @media screen and (min-width: 1400px) {
         width: ${props => props.size === 'big' ? '215px' : props.size === 'medium' ? '130px' : '100px'};
         height: ${props => props.size === 'big' ? '66px' : props.size === 'medium' ? '66px' : '54px'};
-        font-size: ${props => props.size === 'big' ? '18px' : props.size === 'medium' ? '18px' : '12px'};
+        font-size: ${props => props.size === 'big' ? '16px' : props.size === 'medium' ? '14px' : '12px'};
     }
 `
 
