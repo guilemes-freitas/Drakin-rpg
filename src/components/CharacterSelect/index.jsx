@@ -15,7 +15,7 @@ const CharacterSelect = ({handleSelect, characterName}) =>{
             if (item?.className.includes("option--selected")) {
             const top = item.offsetTop;
             const left = item.offsetLeft;
-            setLeftIndicator(`${left}px`);
+            setLeftIndicator(`${left+33}px`);
             setTopIndicator(`${top+5}px`);
             }
         });

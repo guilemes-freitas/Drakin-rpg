@@ -36,7 +36,7 @@ export const MenuWrapper = styled.nav`
   .indicator {
     position: absolute;
     left: ${(props) => props.leftIndicator};
-    top: 32px;
+    top: 25px;
     background-color: var(--blue);
     height: 12px;
     width: 12px;

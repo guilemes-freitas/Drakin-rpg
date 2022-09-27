@@ -4,10 +4,10 @@ import {
   FormContainer,
   SectionTitle,
   ButtonWrapperRight,
-  ButtonWrapperLeft,
   Content,
   RaceTitle,
   RaceImage,
+  Return,
   Benefits,
   Description,
 } from "./styles";
@@ -72,6 +72,7 @@ const CreateCharacter = () => {
             <SectionTitle>Selecione uma raça</SectionTitle>
             <RaceTitle>{raceInfo && raceInfo.race}</RaceTitle>
             <Content>
+              <Return onClick={() => history.push("/")}>RETORNAR</Return>
               <Input
                 name="name"
                 label="Nome do personagem"
@@ -84,9 +85,6 @@ const CreateCharacter = () => {
             <ButtonWrapperRight>
               <ArrowButton type="submit"></ArrowButton>
             </ButtonWrapperRight>
-            <ButtonWrapperLeft>
-              <ArrowButton onClickFunc={() => history.push("/")} isLeft></ArrowButton>
-            </ButtonWrapperLeft>
           </FormContainer>
         </PageBorder>
     </Container>

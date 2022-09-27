@@ -15,7 +15,6 @@ const Dashboard = () => {
             <NavLink to="/newCharacter">
               <DashboardCard>Criar novo personagem</DashboardCard>
             </NavLink>
-            <DashboardCard >Regras</DashboardCard>
         </Content>
       </PageBorder>
     </Container>
