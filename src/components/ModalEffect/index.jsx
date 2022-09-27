@@ -7,7 +7,7 @@ import {
     Button, ButtonWrapper, RadioButton, EffectImage, RadioButtonContainer, QuantityButtonContainer,
   } from "./styles";
 import { FaTimes } from "react-icons/fa";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useState } from "react";
 import {handleDecrease,handleIncrease} from "../../utils/IncreaseDecrease";
