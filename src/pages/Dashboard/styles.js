@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
 width: 100%;
 height: 100vh;
-padding: 0px 30px;
+padding: 15px 10px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -11,7 +11,7 @@ position: relative;
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 36px;
+  font-size: 28px;
   text-transform: uppercase;
   font-weight: 500;
   position: absolute;

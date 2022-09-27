@@ -91,7 +91,7 @@ const Characters = () => {
                                     <CharacterStat statValue={character?.stats.perception} statType={"Percepção"}></CharacterStat>
                                 </StatWrapper>
                                 <EffectsWrapper>
-                                    <Button whiteSchema size={'medium'} onClickFunc={() => setIsEffectModalVisible(!isEffectModalVisible)}>Efeitos</Button>
+                                    <Button whiteSchema onClickFunc={() => setIsEffectModalVisible(!isEffectModalVisible)}>Efeitos</Button>
                                     {character?.effects.bleed.turns > 0 && 
                                     <EffectFigure><EffectImage src={Bleed} alt="Sangramento" title={`Turnos: ${character.effects.bleed.turns}`}/><figcaption>{character.effects.bleed.points}</figcaption></EffectFigure>}
                                     {character?.effects.blight.turns > 0 && 
@@ -128,13 +128,13 @@ const Characters = () => {
                                 <Button color={'--red'} size={'big'} onClickFunc = {() =>setIsDamageVisible(!isDamageVisible)}>Receber dano</Button>
                                 <Button color={'--green'} size={'big'} onClickFunc = {() =>setIsCureVisible(!isCureVisible)}>Receber cura</Button>
                                 <ButtonArmorWrapper>
-                                    <Button color={'--blue'} size={'medium'} onClickFunc = {() =>setIsExtraArmorVisible(!isExtraArmorVisible)}>Armadura extra</Button>
+                                    <Button color={'--blue'} onClickFunc = {() =>setIsExtraArmorVisible(!isExtraArmorVisible)}>Armadura extra</Button>
                                     <Button color={'--blue'} size={'big'} onClickFunc = {() =>setIsArmorVisible(!isArmorVisible)}>Recuperar armadura</Button>
                                     <Button color={'--blue'} onClickFunc = {() => setIsMaxArmorVisible(!isMaxArmorVisible)}>Armadura máxima</Button>
                                 </ButtonArmorWrapper>
                             </ButtonWrapper>
                             <TurnWrapper>
-                                <Button color={'--green'} size={'medium'} onClickFunc = {() => updateCharacter(handleNextTurn(character))}>Inicio de turno</Button>
+                                <Button color={'--green'} size={'medium'} onClickFunc = {() => updateCharacter(handleNextTurn(character))}>Próximo turno</Button>
                             </TurnWrapper>
                             
                         </>
@@ -182,7 +182,7 @@ const Characters = () => {
                       setIsModalVisible={setIsEffectModalVisible}
                       confirmFunc={handleEffect}
                     ></ModalEffect>
-                    <CharacterSelect handleSelect={ handleSelect} characterName={characterName}></CharacterSelect>
+                    <CharacterSelect handleSelect={handleSelect} characterName={characterName}></CharacterSelect>
                 </Content>
             </PageBorder>
         </Container>

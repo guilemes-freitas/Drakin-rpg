@@ -39,6 +39,8 @@ export const CloudBackground = styled.div`
 `;
 
 export const LeftContainer = styled.div`
+  background-image: url(${Sky});
+  clip-path: polygon(0 0,100% 43%,100% 100%,0% 100%);
   height: 25%;
   width: 100%;
   position: absolute;
@@ -51,6 +53,8 @@ export const LeftContainer = styled.div`
   justify-content: flex-start;
 
   @media screen and (min-width: 720px) {
+    background-image: none;
+    clip-path: initial;
     height: 68%;
     width: 43%;
     bottom: initial;
@@ -70,10 +74,10 @@ export const LeftSide = styled.div`
   left: 0;
   filter: drop-shadow(0px 8px 4px rgba(0,0,0,0.25));
   font-size: 14px;
+  opacity: 0.75;
 
   @media screen and (min-width: 720px) {
     font-size: 28px;
-    opacity: 0.75;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
 `;
@@ -153,11 +157,11 @@ export const Points = styled.div`
     height: 125px;
     h4{
       font-size: 50px;
-      padding-right: 20px;
+      padding-right: 34px;
     }
     p{
       font-size: 14px;
-      padding-left: 32px;
+      padding-left: 54px;
     }
   }
   @media screen and (min-width: 1400px) {
@@ -219,7 +223,7 @@ export const CharacterStatWrapper = styled.div`
     p{
       font-size: 28px;
       z-index: 5;
-      padding-bottom: 2rem;
+      padding-bottom: 1rem;
     }
   }
 `
@@ -252,20 +256,6 @@ export const StatsContainer = styled.div`
 export const StatWrapper = styled.div`
   font-size: 0;
   display: flex;
-  .Hexagon{
-    margin-bottom: calc(26px - 155px * 0.2886);
-    @media screen and (min-width: 720px) {
-      margin-bottom: calc(22px - 155px * 0.2886);
-    }
-  }
-`;
-
-export const StatWrapperAbsolute = styled.div`
-  font-size: 0;
-  display: flex;
-  position: absolute;
-  right: 7rem;
-  bottom: 150px;
   .Hexagon{
     margin-bottom: calc(26px - 155px * 0.2886);
     @media screen and (min-width: 720px) {

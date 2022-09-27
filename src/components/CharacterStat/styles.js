@@ -19,8 +19,8 @@ export const FirstSquare = styled.div`
     justify-content: center;
     transform: rotate(45deg);
     @media screen and (min-width: 720px) {
-        height: ${props => props.type2 ? '65px' : '40px'};
-        width: ${props => props.type2 ? '65px' : '40px'};
+        height: ${props => props.type2 ? '65px' : '30px'};
+        width: ${props => props.type2 ? '65px' : '30px'};
     }
     @media screen and (min-width: 1400px) {
         height: ${props => props.type2 ? '85px' : '40px'};
@@ -35,8 +35,8 @@ export const SecondSquare = styled.div`
     border: 2px solid var(--white);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     @media screen and (min-width: 720px) {
-        height: ${props => props.type2 ? '58px' : '35px'};
-        width: ${props => props.type2 ? '58px' : '35px'};
+        height: ${props => props.type2 ? '58px' : '27px'};
+        width: ${props => props.type2 ? '58px' : '27px'};
     }
     @media screen and (min-width: 1400px) {
         height: ${props => props.type2 ? '78px' : '35px'};

@@ -8,7 +8,10 @@ export const Container = styled.div`
   justify-content: center;
   gap: 45px;
   height: 100vh;
-  padding: 0px 30px;
+  padding: 30px 10px;
+  @media screen and (min-width: 720px) {
+  padding: 30px;
+  }
 `;
 
 export const Content = styled.div`
@@ -16,10 +19,9 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
   z-index: 2;
   width: 100%;
-  height: 45%;
+  height: 60%;
   @media screen and (min-width: 1400px) {
     gap: 3rem;
     height: 100%;
@@ -27,7 +29,7 @@ export const Content = styled.div`
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 36px;
+  font-size: 28px;
   text-transform: uppercase;
   font-weight: 500;
   position: absolute;
@@ -38,25 +40,29 @@ export const SectionTitle = styled.h2`
 `;
 
 export const Return = styled.button`
-    font-size: 18px;
+    font-size: 16px;
     bottom: 98.6%;
     left: 30px;
     position: absolute;
     background-color: var(--black);
     color: white;
     font-family: 'Pirata One';
-`
+`;
+
 export const StatContainer = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content:  space-around;
   position: absolute;
   top: 2rem;
-  left: 2rem;
+  left: 0.5rem;
+  @media screen and (min-width: 720px) {
+    left: 2rem;
+  }
 `;
 
 export const StatWrapper = styled.div`
-  display: flex;
+  display: none;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
@@ -65,16 +71,22 @@ export const StatWrapper = styled.div`
     z-index: 5;
     padding-bottom: 2rem;
   }
-`
+  @media screen and (min-width: 720px) {
+    display: flex;
+  }
+`;
 
 export const CurrentStatContainer = styled.div`
   display: flex;
   align-items: flex-start;
   position: relative;
   justify-content:  space-around;
-  gap: 3rem;
+  gap: 1rem;
+  @media screen and (min-width: 720px) {
+    gap: 2rem;
+  }
   @media screen and (min-width: 1400px) {
-    gap: 5rem;
+    gap: 3rem;
   }
 `;
 
@@ -110,7 +122,7 @@ export const PAWrapper = styled.div`
   @media screen and (min-width: 1400px) {
     margin-bottom: 5rem;
   }
-`
+`;
 
 export const ButtonArmorWrapper = styled.div`
   display: flex;
@@ -119,20 +131,26 @@ export const ButtonArmorWrapper = styled.div`
   justify-content: center;    
   gap: 1rem;
   margin-bottom: 0.6rem;
-`
+`;
 
 export const TurnWrapper = styled.div`
   position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-`
+  top: 2rem;
+  right: 0.5rem;
+  @media screen and (min-width: 720px) {
+    bottom: 2rem;
+    left: 2rem;
+    top: auto;
+    right: auto;
+  }
+`;
 
 export const EffectsWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content:  space-around;
   flex-direction: column;
-`
+`;
 
 export const EffectFigure = styled.figure`
   display: flex;
@@ -156,4 +174,4 @@ export const EffectImage = styled.img`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
