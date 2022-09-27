@@ -1,4 +1,4 @@
-import {ButtonWrapperLeft, ButtonWrapperRight ,CharacterStatWrapper, CloudBackground, Container, Figure, LeftContainer, LeftSide, Middle, MiddleContainer, Points, RightSide, RightSideContainer, StatsContainer, StatWrapper, StatWrapperAbsolute} from "./styles";
+import {ButtonWrapperLeft, ButtonWrapperRight ,CharacterStatWrapper, CloudBackground, Container, Figure, LeftContainer, LeftSide, Middle, MiddleContainer, Points, RightSide, RightSideContainer, StatsContainer, StatWrapper} from "./styles";
 import { useState } from "react";
 import raceStatus from "../../utils/raceStatus";
 import ArrowButton from "../../components/ArrowButton";
@@ -205,19 +205,17 @@ const CreateStats = () => {
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.vigor} handlePoints={handlePoints} statType={"Vigor"} setValue={setVigor} statValue={vigor}><FaPlusCircle/></Stat>
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.agility} handlePoints={handlePoints} statType={"Agilidade"} setValue={setAgility} statValue={agility}><FaBolt/></Stat>
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.strength} handlePoints={handlePoints} statType={"Força"} setValue={setStrength} statValue={strength}><FaDumbbell/></Stat>
+                    <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.faith} handlePoints={handlePoints} statType={"Fé"} setValue={setFaith} statValue={faith}><FaSun/></Stat>
                 </StatWrapper>
                 <StatWrapper>
-                    <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.faith} handlePoints={handlePoints} statType={"Fé"} setValue={setFaith} statValue={faith}><FaSun/></Stat>
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.charisma} handlePoints={handlePoints} statType={"Carisma"} setValue={setCharisma} statValue={charisma}><FaCommentDots/></Stat>
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.dexterity} handlePoints={handlePoints} statType={"Destreza"} setValue={setDexterity} statValue={dexterity}><FaFistRaised/></Stat>      
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.intelligence} handlePoints={handlePoints} statType={"Inteligência"} setValue={setIntelligence} statValue={intelligence}><FaBrain/></Stat>
                 </StatWrapper>
                 <StatWrapper>
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.perception} handlePoints={handlePoints} statType={"Percepção"} setValue={setPerception} statValue={perception}><FaEye/></Stat>
-                </StatWrapper>
-                <StatWrapperAbsolute>
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.wisdom} handlePoints={handlePoints} statType={"Sabedoria"} setValue={setWisdom} statValue={wisdom}><FaLightbulb/></Stat>
-                </StatWrapperAbsolute>
+                </StatWrapper>
             </StatsContainer>
             <ButtonWrapperRight>
                 <ArrowButton onClickFunc={onSubmitFunction}></ArrowButton>

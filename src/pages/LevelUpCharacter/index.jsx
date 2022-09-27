@@ -1,4 +1,4 @@
-import {CharacterStatWrapper, CloudBackground, Container, Figure, LeftContainer, LeftSide, Middle, MiddleContainer, Points, RightSide, RightSideContainer, StatsContainer, StatWrapper, StatWrapperAbsolute} from "./styles";
+import {CharacterStatWrapper, CloudBackground, Container, Figure, LeftContainer, LeftSide, Middle, MiddleContainer, Points, RightSide, RightSideContainer, StatsContainer, StatWrapper} from "./styles";
 import { useState } from "react";
 import raceStatus from "../../utils/raceStatus";
 import { useHistory } from "react-router-dom";
@@ -107,19 +107,18 @@ const LevelUpCharacter = () => {
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.vigor} handlePoints={handlePoints} statType={"Vigor"} setValue={setVigor} statValue={vigor} maxValue={80} minValue={character.stats.vigor}><FaPlusCircle/></Stat>
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.agility} handlePoints={handlePoints} statType={"Agilidade"} setValue={setAgility} statValue={agility} maxValue={48} minValue={character.stats.agility}><FaBolt/></Stat>
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.strength} handlePoints={handlePoints} statType={"Força"} setValue={setStrength} statValue={strength} maxValue={80} minValue={character.stats.strength}><FaDumbbell/></Stat>
+                    <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.faith} handlePoints={handlePoints} statType={"Fé"} setValue={setFaith} statValue={faith} maxValue={80} minValue={character.stats.faith}><FaSun/></Stat>
                 </StatWrapper>
                 <StatWrapper>
-                    <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.faith} handlePoints={handlePoints} statType={"Fé"} setValue={setFaith} statValue={faith} maxValue={80} minValue={character.stats.faith}><FaSun/></Stat>
+                    
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.charisma} handlePoints={handlePoints} statType={"Carisma"} setValue={setCharisma} statValue={charisma} maxValue={50} minValue={character.stats.charisma}><FaCommentDots/></Stat>
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.dexterity} handlePoints={handlePoints} statType={"Destreza"} setValue={setDexterity} statValue={dexterity} maxValue={80} minValue={character.stats.dexterity}><FaFistRaised/></Stat>      
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.intelligence} handlePoints={handlePoints} statType={"Inteligência"} setValue={setIntelligence} statValue={intelligence} maxValue={80} minValue={character.stats.intelligence}><FaBrain/></Stat>
                 </StatWrapper>
                 <StatWrapper>
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.perception} handlePoints={handlePoints} statType={"Percepção"} setValue={setPerception} statValue={perception} maxValue={50} minValue={character.stats.perception}><FaEye/></Stat>
-                </StatWrapper>
-                <StatWrapperAbsolute>
                     <Stat disabled={availablePoints<=0} bonus={raceBonuses[0]?.bonus.wisdom} handlePoints={handlePoints} statType={"Sabedoria"} setValue={setWisdom} statValue={wisdom} maxValue={40} minValue={character.stats.wisdom}><FaLightbulb/></Stat>
-                </StatWrapperAbsolute>
+                </StatWrapper>
             </StatsContainer>
             <ButtonWrapperRight>
                 <ArrowButton onClickFunc={onSubmitFunction}></ArrowButton>

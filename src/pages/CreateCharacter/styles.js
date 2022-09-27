@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  padding: 0px 10px;
+  padding: 15px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@ export const Container = styled.div`
     top: 38%;
   }
   @media screen and (min-width: 720px) {
-    padding: 0px 30px;
+    padding: 30px;
     >button{
       display: none;
     }
@@ -55,7 +55,7 @@ export const FormContainer = styled.form`
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 36px;
+  font-size: 28px;
   text-transform: uppercase;
   font-weight: 500;
   position: absolute;
@@ -182,8 +182,18 @@ export const Description = styled.span`
     display: inherit;
     left: 3rem;
     width: 65%;
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
-    top: 57%;
+    top: 66%;
   }
 `;
+
+export const Return = styled.button`
+    font-size: 16px;
+    bottom: 98.6%;
+    left: 30px;
+    position: absolute;
+    background-color: var(--black);
+    color: white;
+    font-family: 'Pirata One';
+`

@@ -24,12 +24,12 @@ export const FirstSquare = styled.div`
     justify-content: center;
     transform: rotate(45deg);
     @media screen and (min-width: 720px) {
-        height: 65px;
-        width: 65px;
+        height: 45px;
+        width: 45px;
     }
     @media screen and (min-width: 1400px) {
-        height: 85px;
-        width: 85px;
+        height: 65px;
+        width: 65px;
     }
 `
 
@@ -40,11 +40,11 @@ export const SecondSquare = styled.div`
     border: 2px solid var(--white);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     @media screen and (min-width: 720px) {
-        height: 58px;
-        width: 58px;
+        height: 38px;
+        width: 38px;
     }
     @media screen and (min-width: 1400px) {
-        height: 78px;
-        width: 78px;
+        height: 58px;
+        width: 58px;
     }
 `

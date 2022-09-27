@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const AsideContainer = styled.aside`
     width: 100%;
-    height: 80px;
+    height: 62px;
 
     position: fixed;
     bottom: 0;
@@ -36,13 +36,13 @@ export const MenuWrapper = styled.nav`
   .indicator {
     position: absolute;
     left: ${(props) => props.leftIndicator};
-    top: 21px;
+    top: 25px;
     background-color: var(--blue);
-    height: 14px;
-    width: 14px;
+    height: 12px;
+    width: 12px;
     z-index: 5;
     transition: left 500ms;
-    transform: translateX(-4px);
+    transform: translate(12px,0) rotate(45deg) ;
   }
 
   @media screen and (min-width: 720px) {
@@ -83,12 +83,16 @@ export const MenuWrapper = styled.nav`
       transform: translateY(5px);
       transition: top 500ms;
       transform: rotate(45deg);
+      height: 14px;
+      width: 14px;
     }
   }
 `;
 
 export const Wrapper = styled.div`
+  margin: 0 auto;
+  position: relative;
+  @media screen and (min-width: 720px) {
     width: 90%;
-    margin: 0 auto;
-    position: relative;
+  }
 `;
