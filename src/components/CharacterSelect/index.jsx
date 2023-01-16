@@ -16,7 +16,7 @@ const CharacterSelect = ({handleSelect, characterName}) =>{
             const top = item.offsetTop;
             const left = item.offsetLeft;
             setLeftIndicator(`${left+33}px`);
-            setTopIndicator(`${top+5}px`);
+            setTopIndicator(`${top+4}px`);
             }
         });
         options.current=[];

@@ -42,11 +42,14 @@ export const SectionTitle = styled.h2`
 export const Return = styled.button`
     font-size: 16px;
     bottom: 98.6%;
-    left: 30px;
+    left: 2px;
     position: absolute;
     background-color: var(--black);
     color: white;
     font-family: 'Pirata One';
+  @media screen and (min-width: 720px) {
+    left: 30px;
+  }
 `;
 
 export const StatContainer = styled.div`

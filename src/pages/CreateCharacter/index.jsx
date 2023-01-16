@@ -7,10 +7,10 @@ import {
   Content,
   RaceTitle,
   RaceImage,
-  Return,
   Benefits,
   Description,
 } from "./styles";
+import { Return } from "../Characters/styles";
 import { useState } from "react";
 import raceStatus from "../../utils/raceStatus";
 import ArrowButton from "../../components/ArrowButton";
