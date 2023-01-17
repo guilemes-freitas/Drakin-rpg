@@ -14,8 +14,8 @@ const RaceSelect = ({handleSelect, race}) =>{
             if (item?.className.includes("option--selected")) {
             const top = item.offsetTop;
             const left = item.offsetLeft;
-            setLeftIndicator(`${left}px`);
-            setTopIndicator(`${top+5}px`);
+            setLeftIndicator(`${left+8}px`);
+            setTopIndicator(`${top+4}px`);
             }
         });
         races.current=[];

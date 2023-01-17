@@ -187,13 +187,3 @@ export const Description = styled.span`
     top: 66%;
   }
 `;
-
-export const Return = styled.button`
-    font-size: 16px;
-    bottom: 98.6%;
-    left: 30px;
-    position: absolute;
-    background-color: var(--black);
-    color: white;
-    font-family: 'Pirata One';
-`

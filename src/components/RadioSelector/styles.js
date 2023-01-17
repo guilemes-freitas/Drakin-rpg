@@ -30,8 +30,8 @@ export const ItemBorder = styled.div`
   cursor: pointer;
     z-index: 4;
   @media screen and (min-width: 720px) {
-    width: 22px;
-    height: 22px;
+    width: 21px;
+    height: 21px;
   }
 `;
 
