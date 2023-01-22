@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Drakin RPG
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# English
 
-## Available Scripts
+This is a personal web application project created with the goal of facilitating the creation, storage and management of RPG character sheets. Using React Framework, Greensock and Context technologies, this application allows players to create customized characters with information such as name, race, level and attributes, as well as featuring original artwork for character races.
+With this application you can manage your character sheets and play your games with more agility and ease.
 
-In the project directory, you can run:
+## Getting Started
 
-### `yarn start`
+1. Clone the repository to your local machine
+2. Access the project root folder through the terminal
+3. Run the command `yarn install` to install the project dependencies
+4. Then, run the command `yarn start` to start the application in development mode
+5. The application will be available at `http://localhost:3000` and will reload automatically as you make code changes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Any questions, I am available.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Português
 
-### `yarn test`
+Este é um projeto pessoal de aplicação web criado com o objetivo de facilitar a criação, armazenamento e gerenciamento de fichas de personagens de RPG de mesa. Utilizando as tecnologias React, Greensock e Context, essa aplicação permite aos jogadores criar personagens personalizados com informações como nome, raça, nível e atributos, além de contar com arte original para as raças de personagens.
+Com essa aplicação você pode gerenciar suas fichas e jogar seus jogos com mais agilidade e facilidade.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Como começar
 
-### `yarn build`
+1. Faça o clone do repositório para sua máquina local
+2. Acesse a pasta raiz do projeto através do terminal
+3. Execute o comando `yarn install` para instalar as dependências do projeto
+4. Em seguida, execute o comando `yarn start` para iniciar a aplicação em modo de desenvolvimento
+5. A aplicação estará disponível em `http://localhost:3000` e irá recarregar automaticamente conforme você fizer alterações no código.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Qualquer dúvida estou a disposição.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
