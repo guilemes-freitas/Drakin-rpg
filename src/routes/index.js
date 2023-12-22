@@ -4,6 +4,7 @@ import CreateCharacter from "../pages/CreateCharacter";
 import CreateStats from "../pages/CreateStats";
 import Dashboard from "../pages/Dashboard";
 import LevelUpCharacter from "../pages/LevelUpCharacter";
+import Rules from "../pages/Rules";
 
 const Routes = () => {
   return (
@@ -22,6 +23,9 @@ const Routes = () => {
         </Route>
         <Route path="/levelup">
             <LevelUpCharacter></LevelUpCharacter>
+        </Route>
+        <Route path="/rules">
+            <Rules></Rules>
         </Route>
     </Switch>
   );
