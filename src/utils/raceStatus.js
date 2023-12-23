@@ -20,17 +20,6 @@ const raceStatus = [
   },
   {
     id: "2",
-    race: "Ouismer",
-    region: "Ouismouth",
-    image: Will,
-    benefits: ["+2 carisma", "+3 destreza", "+5 em testes de barganha."],
-    proficiences:{},
-    bonus:{charisma:2,dexterity:4},
-    resistences:{},
-    description: "Habitante da região de Ouismouth. Os Ouismer são em sua grande maioria humanos camponeses. A região é conhecida por suas flores em abundância e campos verdejantes.",
-  },
-  {
-    id: "3",
     race: "Drakin",
     region: "Drakimar",
     image: Drakin,
@@ -46,7 +35,7 @@ const raceStatus = [
     description: "Nascido dos dragões. Os Drakin são uma raça guerreira, muito mais fortes, orgulhosos e impetuosos que os humanos, vivem em regiões com alta ocorrência de dragões. Sua maior população está em Drakimar, no sul do continente Swordenfell, e ao norte do continente élfico. As características principais dos Drakins são seus cabelos prateados e seus olhos de dragão.",
   },
   {
-    id: "4",
+    id: "3",
     race: "Sarkin",
     region: "",
     image: Sarkin,
@@ -63,7 +52,7 @@ const raceStatus = [
     description: "Durante uma lua sangrenta, existe a possibilidade de um humano nascer com poderes sobrenaturais, estes humanos nascidos da lua são chamados de Sarkin, seus olhos e cabelos possuem uma coloração escarlate e tem uma forte conexão com magia de sangue desde sua infância. O sangue dos sarkin é especial e extremamente valorizado por aqueles que buscam rituais de magia negra, por conta disso, não é raro o ataque de magos a locais que possuem uma criança Sarkin. Os humanos comuns veem os Sarkin como um mal algoro e muitas vezes a criança é morta ou entregue a igreja."
   },
   {
-    id: "5",
+    id: "4",
     race: "Tiefling",
     region: "",
     image: Tiefling,
@@ -79,7 +68,7 @@ const raceStatus = [
     description: "Tieflings possuem a pele de cor azulada ou amarelada. Seu nariz, mãos, pés e pálpebras podem adquirir uma cor escura como a noite. Por conta dessas características que se asemelham a de um cadáver e sua cultura para com os mortos, são creditados como mal algoro e que atraem a morte, o que não necessáriamente é verdade.",
   },
   {
-    id: "7",
+    id: "5",
     race: "Elfo",
     region: "Continente Élfico",
     image: Asrimer,
@@ -93,6 +82,22 @@ const raceStatus = [
     bonus:{intelligence:2,dexterity:3},
     resistences:{},
     description: "É dito que os elfos já existiam muito antes do primeiro humano surgir, visto que, todos os registros históricos foram perdidos, não se sabe muito sobre a veracidade desse fato.",
+  },
+  {
+    id: "6",
+    race: "Jeo'donghe",
+    region: "Continente Élfico",
+    image: Asrimer,
+    benefits: [
+      "+2 vigor",
+      "+2 força",
+      "Visão noturna",
+      "Regeneração: Se curam em 1 por turno durante o combate e só precisam de um descanso rápido para se curar completamente"
+    ],
+    proficiences:{},
+    bonus:{vigor:2,strength:2},
+    resistences:{},
+    description: "Os Jeo'donghe são naturalmente resistentes, suas garras ajudam durante a escavação a procura de minerais",
   },
 ];
 

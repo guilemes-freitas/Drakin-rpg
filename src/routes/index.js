@@ -25,7 +25,7 @@ const Routes = () => {
             <LevelUpCharacter></LevelUpCharacter>
         </Route>
         <Route path="/rules">
-            <Rules></Rules>
+            <Rules/>
         </Route>
     </Switch>
   );
