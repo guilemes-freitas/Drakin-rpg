@@ -7,11 +7,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   >button{
     z-index: 5;
-    position: absolute;
-    top: 38%;
   }
   @media screen and (min-width: 720px) {
     padding: 30px;
@@ -58,7 +55,6 @@ export const SectionTitle = styled.h2`
   font-size: 28px;
   text-transform: uppercase;
   font-weight: 500;
-  position: absolute;
   z-index: -1;
   background-color: var(--black);
   padding: 0 5px;
@@ -72,7 +68,6 @@ export const Benefit = styled.span`
 `;
 
 export const ButtonWrapperRight = styled.div`
-  position: absolute;
   right: 0;
   bottom: 0;
   @media screen and (min-width: 720px) {
@@ -82,7 +77,6 @@ export const ButtonWrapperRight = styled.div`
 `;
 
 export const ButtonWrapperLeft = styled.div`
-  position: absolute;
   left: 0;
   bottom: 0;
   @media screen and (min-width: 720px) {
@@ -98,7 +92,6 @@ export const RaceImage = styled.div`
   background-position: center;
   height: 85%;
   width: 85%;
-  position: absolute;
   display: block;
   z-index: 1;
   opacity: 0.4;
@@ -108,7 +101,6 @@ export const RaceImage = styled.div`
     width: 42%;
     left: 45%;
     opacity: 1;
-    position: absolute;
     background-size: contain;
   }
   @media screen and (min-width: 940px) {
@@ -120,7 +112,6 @@ export const RaceTitle = styled.h2`
   display: none;
   @media screen and (min-width: 720px) {
     display: block;
-    position: absolute;
     text-decoration: underline;
     font-weight: 500;
     text-transform: uppercase;
@@ -139,7 +130,6 @@ export const Benefits = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  position: absolute;
   display: ${props => props.display ? "inherit" : "none"};
   background-color: var(--white);
   left: 0;
@@ -172,7 +162,6 @@ export const Description = styled.span`
   flex-direction: column;
   width: 90%;
   font-size: 14px;
-  position: absolute;
   color: var(--white);
   display: ${props => props.display ? "inherit" : "none"};
   text-align: center;
@@ -192,7 +181,6 @@ export const Return = styled.button`
     font-size: 16px;
     bottom: 98.6%;
     left: 30px;
-    position: absolute;
     background-color: var(--black);
     color: white;
     font-family: 'Pirata One';

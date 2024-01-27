@@ -1,5 +1,4 @@
 import Imperial from "../assets/characterImage/Imperial.png";
-import Will from "../assets/characterImage/will.png";
 import Drakin from "../assets/characterImage/Drakin.png";
 import Sarkin from "../assets/characterImage/Sarkin.png";
 import Tiefling from "../assets/characterImage/Tiefling.png";

@@ -1,13 +1,10 @@
 import DashboardCard from "../../components/DashboardCard";
-import { Container, Content, SectionTitle } from "./styles";
+import { Container, SectionTitle } from "./styles";
 import { NavLink } from "react-router-dom";
-import PageBorder from "../../components/PageBorder";
 
 const Dashboard = () => {
   return (
     <Container>
-      <PageBorder>
-        <Content>
             <SectionTitle>Drakin</SectionTitle>
             <NavLink to="/characters">
               <DashboardCard >Seus personagens</DashboardCard>
@@ -18,8 +15,6 @@ const Dashboard = () => {
             <NavLink to="/rules">
               <DashboardCard>Regras</DashboardCard>
             </NavLink>
-        </Content>
-      </PageBorder>
     </Container>
   );
 };

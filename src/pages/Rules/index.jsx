@@ -1,10 +1,8 @@
 import { Container, Content, SectionTitle } from "./styles";
-import PageBorder from "../../components/PageBorder";
 
 const Rules = () => {
   return (
     <Container>
-      <PageBorder>
         <Content>
             <SectionTitle>Rules</SectionTitle>
         <h2>Ataques críticos:</h2> 
@@ -83,7 +81,6 @@ const Rules = () => {
         1 (falha crítica) conta como duas falhas e 20 (sucesso crítico) conta como dois sucessos.
 
         </Content>
-      </PageBorder>
     </Container>
   );
 };

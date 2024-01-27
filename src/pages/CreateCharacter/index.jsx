@@ -2,7 +2,6 @@ import Input from "../../components/Input";
 import {
   Container,
   FormContainer,
-  SectionTitle,
   ButtonWrapperRight,
   Content,
   RaceTitle,
@@ -14,7 +13,6 @@ import {
 import { useState } from "react";
 import raceStatus from "../../utils/raceStatus";
 import ArrowButton from "../../components/ArrowButton";
-import PageBorder from "../../components/PageBorder";
 import RaceSelect from "../../components/RaceSelect";
 import Button from "../../components/Button";
 import { useHistory } from "react-router-dom";
@@ -66,10 +64,7 @@ const CreateCharacter = () => {
       {disadvantages && disadvantages.map((disadvantage,index) => {return <span key={index} className="disadvantage">{disadvantage}</span>})}</Benefits>
       
       {raceInfo && <Description display={display}>{raceInfo.description}</Description>}
-      
-      <PageBorder>
           <FormContainer onSubmit={onSubmitFunction}>
-            <SectionTitle>Selecione uma raça</SectionTitle>
             <RaceTitle>{raceInfo && raceInfo.race}</RaceTitle>
             <Content>
               <Return onClick={() => history.push("/")}>RETORNAR</Return>
@@ -86,7 +81,6 @@ const CreateCharacter = () => {
               <ArrowButton type="submit"></ArrowButton>
             </ButtonWrapperRight>
           </FormContainer>
-        </PageBorder>
     </Container>
   );
 };

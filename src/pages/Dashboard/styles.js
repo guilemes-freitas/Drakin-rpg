@@ -7,26 +7,15 @@ padding: 15px 10px;
 display: flex;
 justify-content: center;
 align-items: center;
-position: relative;
+flex-direction: column;
+gap: 1rem;
 `;
 
 export const SectionTitle = styled.h2`
   font-size: 28px;
   text-transform: uppercase;
   font-weight: 500;
-  position: absolute;
   background-color: var(--black);
   padding: 0 5px;
   bottom: 97%;
-`;
-
-export const Content = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-gap: 1rem;
-z-index: 2;
-width: 100%;
-height: 100%;
 `;

@@ -2,7 +2,6 @@
 import { ButtonArmorWrapper, ButtonWrapper, Container, Content, 
     CurrentStatContainer, EffectImage, EffectFigure, EffectsWrapper, PATitle, 
     PAWrapper, Return, SectionTitle, StatContainer, StatWrapper, TurnWrapper } from "./styles";
-import PageBorder from "../../components/PageBorder";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import CharacterSelect from "../../components/CharacterSelect";
@@ -70,7 +69,6 @@ const Characters = () => {
     const history = useHistory();
     return (
         <Container>
-            <PageBorder>
                 <Content>
                     <Return onClick={() => history.push("/")}>RETORNAR</Return>
                     <SectionTitle>{character?.name}</SectionTitle>
@@ -184,7 +182,6 @@ const Characters = () => {
                     ></ModalEffect>
                     <CharacterSelect handleSelect={handleSelect} characterName={characterName}></CharacterSelect>
                 </Content>
-            </PageBorder>
         </Container>
     );
 };
