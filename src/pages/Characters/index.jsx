@@ -2,7 +2,7 @@
 import { ButtonArmorWrapper, ButtonWrapper, Container, Content, 
     CurrentStatContainer, EffectImage, EffectFigure, EffectsWrapper, PATitle, 
     PAWrapper, Return, SectionTitle, StatContainer, StatWrapper, TurnWrapper } from "./styles";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import CharacterSelect from "../../components/CharacterSelect";
 import { useCharacters } from "../../providers/characters";
@@ -66,11 +66,11 @@ const Characters = () => {
         removeCharacter(character);
         setCharacter(false);
     }
-    const history = useHistory();
+    const history = useNavigate();
     return (
         <Container>
                 <Content>
-                    <Return onClick={() => history.push("/")}>RETORNAR</Return>
+                    <Return onClick={() => history("/")}>RETORNAR</Return>
                     <SectionTitle>{character?.name}</SectionTitle>
                     {character && 
                         <>

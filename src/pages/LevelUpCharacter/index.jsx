@@ -1,7 +1,7 @@
 import {CharacterStatWrapper, CloudBackground, Container, Figure, LeftContainer, LeftSide, Middle, MiddleContainer, Points, RightSide, RightSideContainer, StatsContainer, StatWrapper} from "./styles";
 import { useState } from "react";
 import raceStatus from "../../utils/raceStatus";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Stat from "../../components/Stat";
 import { useCharacters } from "../../providers/characters";
 import { FaPlusCircle, FaBolt, FaDumbbell, FaFistRaised, FaBrain, FaSun, FaCommentDots, FaEye, FaLightbulb } from "react-icons/fa";
@@ -29,7 +29,7 @@ const LevelUpCharacter = () => {
     const [wisdom, setWisdom] = useState(character.stats.wisdom);
     const [error, setError] = useState(false);
 
-    const history = useHistory();
+    const history = useNavigate();
     const handlePoints = (value) =>{
         setAvailablePoints(availablePoints+value)
         setError(false)
@@ -57,12 +57,12 @@ const LevelUpCharacter = () => {
             character.stats.wisdom = wisdom
             updateCharacter(character)
             setCharacter(false)
-            history.push("/characters")
+            history("/characters")
         }
   };
 
   if(!Object.keys(character).length){
-      history.push("/")
+      history("/")
   }
 
   return (

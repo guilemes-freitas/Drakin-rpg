@@ -15,7 +15,7 @@ import raceStatus from "../../utils/raceStatus";
 import ArrowButton from "../../components/ArrowButton";
 import RaceSelect from "../../components/RaceSelect";
 import Button from "../../components/Button";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCharacters } from "../../providers/characters";
 
 const CreateCharacter = () => {
@@ -42,7 +42,7 @@ const CreateCharacter = () => {
     setName(e.target.value)
   };
 
-  const history = useHistory();
+  const history = useNavigate();
 
   const onSubmitFunction = async (e) => {
     e.preventDefault();
@@ -52,7 +52,7 @@ const CreateCharacter = () => {
       setError(true)
     }else{
       const alreadyHave = savePreCharacter(character)
-      alreadyHave ? setError(true) : history.push("/stats")
+      alreadyHave ? setError(true) : history("/stats")
     }
   };
 
@@ -70,8 +70,8 @@ const CreateCharacter = () => {
               <Return onClick={() => history.push("/")}>RETORNAR</Return>
               <Input
                 name="name"
-                label="Nome do personagem"
-                placeholder=""
+                label=""
+                placeholder={raceInfo && raceInfo.race}
                 onChange={handleName}
                 error={error}
               ></Input>

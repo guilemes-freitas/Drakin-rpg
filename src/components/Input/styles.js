@@ -1,9 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const InputItem = styled.input`
-  border-radius: 4px;
   font-family: 'Pirata One';
-  border: 4px solid var(--white);
   ${(props) =>
     props.isErrored &&
     css`

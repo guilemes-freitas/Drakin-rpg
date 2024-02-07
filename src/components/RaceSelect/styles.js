@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const AsideContainer = styled.aside`
-    width: 280px;
     height: 80px;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
 
     z-index: 4;
     display: flex;

@@ -4,9 +4,6 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   padding: 15px 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   >button{
     z-index: 5;
   }
@@ -23,7 +20,6 @@ export const Content = styled.div`
   flex-direction: column;
   left: 3%;
   top: 7%;
-  width: 80%;
   height: 80%;
   gap: 2rem;
   @media screen and (max-width: 720px) {
@@ -94,13 +90,11 @@ export const RaceImage = styled.div`
   width: 85%;
   display: block;
   z-index: 1;
-  opacity: 0.4;
   @media screen and (min-width: 720px) {
     height: 100%;
     z-index: 4;
     width: 42%;
     left: 45%;
-    opacity: 1;
     background-size: contain;
   }
   @media screen and (min-width: 940px) {

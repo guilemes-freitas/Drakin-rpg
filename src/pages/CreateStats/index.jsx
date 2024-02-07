@@ -2,7 +2,7 @@ import {ButtonWrapperLeft, ButtonWrapperRight ,CharacterStatWrapper, CloudBackgr
 import { useState } from "react";
 import raceStatus from "../../utils/raceStatus";
 import ArrowButton from "../../components/ArrowButton";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Stat from "../../components/Stat";
 import { useCharacters } from "../../providers/characters";
 import { FaPlusCircle, FaBolt, FaDumbbell, FaFistRaised, FaBrain, FaSun, FaCommentDots, FaEye, FaLightbulb } from "react-icons/fa";
@@ -26,7 +26,7 @@ const CreateStats = () => {
     const [wisdom, setWisdom] = useState(5);
     const [error, setError] = useState(false);
 
-    const history = useHistory();
+    const history = useNavigate();
     const handlePoints = (value) =>{
         setAvailablePoints(availablePoints+value)
         setError(false)
@@ -155,12 +155,12 @@ const CreateStats = () => {
             setError(true)
         }else{
             addCharacter(character)
-            history.push("/")
+            history("/")
         }
   };
 
   if(!Object.keys(preCharacter).length){
-      history.push("/")
+      history("/")
   }
 
   return (
