@@ -5,9 +5,9 @@ export const GlobalStyles = createGlobalStyle`
         //primary's colors:
         --white: #ECF7FE;
         --green: #31C95E;
-        --black: #031F1F;
+        --black: #000714;
         --red: #ED0010;
-        --blue: #0C94E9;
+        --blue: #2E589B;
     }
 
     html, body, div, span, applet, object, iframe,
@@ -30,7 +30,7 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 100%;
         vertical-align: baseline;
         color: var(--white);
-        font-family: 'Pirata One', cursive,'Roboto', sans-serif;
+        font-family: 'Germania One', cursive,'Balthazar', sans-serif;
     }
 
     /* HTML5 display-role reset for older browsers */

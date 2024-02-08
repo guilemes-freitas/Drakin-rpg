@@ -1,21 +1,24 @@
 import DashboardCard from "../../components/DashboardCard";
-import { Container, SectionTitle } from "./styles";
+import { Section, SectionTitle, ContentWrapper, InfoButton } from "./styles";
 import { NavLink } from "react-router-dom";
+import { FaBook } from "react-icons/fa";
 
 const Dashboard = () => {
   return (
-    <Container>
+    <Section>
       <SectionTitle>Drakin</SectionTitle>
-      <NavLink to="/characters">
-        <DashboardCard >Seus personagens</DashboardCard>
-      </NavLink>
-      <NavLink to="/newCharacter">
-        <DashboardCard>Criar novo personagem</DashboardCard>
-      </NavLink>
+      <ContentWrapper>
+        <NavLink to="/newCharacter">
+          <DashboardCard>Criar personagem</DashboardCard>
+        </NavLink>
+        <NavLink to="/characters">
+          <DashboardCard>Meus personagens</DashboardCard>
+        </NavLink>
+      </ContentWrapper>
       <NavLink to="/rules">
-        <DashboardCard>Regras</DashboardCard>
+        <InfoButton><FaBook/></InfoButton>
       </NavLink>
-    </Container>
+    </Section>
   );
 };
 
