@@ -2,10 +2,14 @@
 
 # English
 
-This is a personal web application project created with the goal of facilitating the creation, storage and management of RPG character sheets. Using React Framework, Greensock and Context technologies, this application allows players to create customized characters with information such as name, race, level and attributes, as well as featuring original artwork for character races.
-With this application you can manage your character sheets and play your games with more agility and ease.
+Drakin RPG was created primarily with the intention of facilitating the creation and management of character sheets for the Drakin system. Values such as the amount of life, status, and mathematical calculations that end up taking up a good portion of a tabletop RPG session are automatically calculated, improving the gameplay dynamics.
 
-## Getting Started
+The project ended up also becoming a way to improve my skills and knowledge as a Front-end developer. A complete rework of the website is in development, improving the interface, performance, and eventually introducing new features that should have been present in the first version.
+
+The Drakin system was created based on the systems of Divinity Original Sin 2, Stoneshard, and D&D. With the aim of being a system that is easy to understand and focuses on the player's freedom to create a unique character.
+
+## For developers
+### Getting Started
 
 1. Clone the repository to your local machine
 2. Access the project root folder through the terminal
@@ -17,10 +21,14 @@ Any questions, I am available.
 
 # Português
 
-Este é um projeto pessoal de aplicação web criado com o objetivo de facilitar a criação, armazenamento e gerenciamento de fichas de personagens de RPG de mesa. Utilizando as tecnologias React, Greensock e Context, essa aplicação permite aos jogadores criar personagens personalizados com informações como nome, raça, nível e atributos, além de contar com arte original para as raças de personagens.
-Com essa aplicação você pode gerenciar suas fichas e jogar seus jogos com mais agilidade e facilidade.
+Drakin RPG foi criado primeiramente com o intuito de facilitar a criação e gerenciamento das fichas de personagem para o sistema de Drakin. Valores como a quantidade de vida, status e calcúlos matemáticos que acabam tomando boa parte de uma sessão de RPG de mesa são automaticamente calculados, melhorando a dinâmica da jogatina. 
 
-## Como começar
+O projeto acabou se tornando também um modo de melhorar as minhas habilidades e conhecimentos como desenvolvedor Front-end. Um completo rework do website está em desenvolvimento, melhorando a interface, performance e futuramente introduzindo novas funcionalidades que deveriam estar presentes na primeira versão.
+
+O sistema de Drakin foi criado tendo base o sistema de Divinity Original Sin 2, Stoneshard e D&D. Tendo o objetivo de ser um sistema de fácil entendimento e que foca na liberdade do jogador de criar um personagem único.
+
+## Para desenvolvedores
+### Como começar
 
 1. Faça o clone do repositório para sua máquina local
 2. Acesse a pasta raiz do projeto através do terminal
@@ -29,5 +37,3 @@ Com essa aplicação você pode gerenciar suas fichas e jogar seus jogos com mai
 5. A aplicação estará disponível em `http://localhost:3000` e irá recarregar automaticamente conforme você fizer alterações no código.
 
 Qualquer dúvida estou a disposição.
-
-
