@@ -13,7 +13,7 @@ const raceStatus = [
     benefits: ["Dois pontos extras durante a criação de personagem",
       "Adaptável: Uma vez por descanso longo pode rolar um resultado de D20 novamente, o resultado com maior valor prevalece."],
     proficiences:{},
-    bonus:{gold:50,points:2},
+    bonus:{points:1},
     resistences:{},
     description: "Habitante da maior cidade do continente Swordenfell, Dawngrey.",
   },

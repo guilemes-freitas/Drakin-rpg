@@ -14,6 +14,7 @@ const CharacterSelect = ({handleSelect, characterName}) =>{
             if (item?.className.includes("option--selected")) {
             const left = item.offsetLeft;
             setLeftIndicator(`${left+33}px`);
+            setTopIndicator(`${top+4}px`);
             }
         });
         options.current=[];
