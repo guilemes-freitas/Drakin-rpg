@@ -7,7 +7,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 45px;
-  height: 100vh;
+  height: 80%;
   padding: 30px 10px;
   @media screen and (min-width: 720px) {
   padding: 30px;

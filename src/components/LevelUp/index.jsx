@@ -1,17 +1,17 @@
 import { Progress } from "antd";
 import { useCharacters } from "../../providers/characters"
 import {Container, LevelButton} from "./styles"
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router";
 
 const LevelUp = ({character}) =>{
     const {updateCharacter,setCharacter} = useCharacters();
 
-    const history = useHistory();
+    const history = useNavigate();
     const handleExperience = () =>{
         character.experience += 1; 
         if (character.experience >= character.level+1){
             setCharacter(character)
-            history.push("/levelup")
+            history("/levelup")
         }else {
             updateCharacter(character);
         }

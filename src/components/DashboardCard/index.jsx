@@ -3,9 +3,9 @@ import { Container,Text } from "./styles";
 const DashboardCard = ({children, image}) => {
 
   return (
-      <Container>
-          <Text>{children}</Text>
-      </Container>
+    <Container>
+      <Text>{children}</Text>
+    </Container>
   );
 };
 

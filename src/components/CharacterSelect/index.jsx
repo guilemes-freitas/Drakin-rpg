@@ -6,14 +6,12 @@ import { useCharacters } from "../../providers/characters";
 const CharacterSelect = ({handleSelect, characterName}) =>{
     const {characters} = useCharacters();
     const options = useRef([]);
-    const [topIndicator, setTopIndicator] = useState("45px");
     const [leftIndicator, setLeftIndicator] = useState("-4px");
     const indicator = useRef(null);
   
     const getDimensions = () => {
         options.current.forEach((item) => {
             if (item?.className.includes("option--selected")) {
-            const top = item.offsetTop;
             const left = item.offsetLeft;
             setLeftIndicator(`${left+33}px`);
             setTopIndicator(`${top+4}px`);
@@ -34,7 +32,6 @@ const CharacterSelect = ({handleSelect, characterName}) =>{
     <AsideContainer>
         <Wrapper>
             <MenuWrapper
-            topIndicator={topIndicator}
             leftIndicator={leftIndicator}
             >
                 {!!characterName && <span className="indicator" ref={indicator}></span>}

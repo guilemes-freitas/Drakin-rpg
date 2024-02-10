@@ -2,7 +2,6 @@ import Input from "../../components/Input";
 import {
   Container,
   FormContainer,
-  SectionTitle,
   ButtonWrapperRight,
   Content,
   RaceTitle,
@@ -14,10 +13,9 @@ import { Return } from "../Characters/styles";
 import { useState } from "react";
 import raceStatus from "../../utils/raceStatus";
 import ArrowButton from "../../components/ArrowButton";
-import PageBorder from "../../components/PageBorder";
 import RaceSelect from "../../components/RaceSelect";
 import Button from "../../components/Button";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCharacters } from "../../providers/characters";
 
 const CreateCharacter = () => {
@@ -44,7 +42,7 @@ const CreateCharacter = () => {
     setName(e.target.value)
   };
 
-  const history = useHistory();
+  const history = useNavigate();
 
   const onSubmitFunction = async (e) => {
     e.preventDefault();
@@ -54,7 +52,7 @@ const CreateCharacter = () => {
       setError(true)
     }else{
       const alreadyHave = savePreCharacter(character)
-      alreadyHave ? setError(true) : history.push("/stats")
+      alreadyHave ? setError(true) : history("/stats")
     }
   };
 
@@ -66,27 +64,23 @@ const CreateCharacter = () => {
       {disadvantages && disadvantages.map((disadvantage,index) => {return <span key={index} className="disadvantage">{disadvantage}</span>})}</Benefits>
       
       {raceInfo && <Description display={display}>{raceInfo.description}</Description>}
-      
-      <PageBorder>
-          <FormContainer onSubmit={onSubmitFunction}>
-            <SectionTitle>Selecione uma raça</SectionTitle>
-            <RaceTitle>{raceInfo && raceInfo.race}</RaceTitle>
-            <Content>
-              <Return onClick={() => history.push("/")}>RETORNAR</Return>
-              <Input
-                name="name"
-                label="Nome do personagem"
-                placeholder=""
-                onChange={handleName}
-                error={error}
-              ></Input>
-              <RaceSelect handleSelect={handleSelect} race={race}></RaceSelect>
-            </Content>
-            <ButtonWrapperRight>
-              <ArrowButton type="submit"></ArrowButton>
-            </ButtonWrapperRight>
-          </FormContainer>
-        </PageBorder>
+      <FormContainer onSubmit={onSubmitFunction}>
+        <RaceTitle>{raceInfo && raceInfo.race}</RaceTitle>
+        <Content>
+          <Return onClick={() => history.push("/")}>RETORNAR</Return>
+          <Input
+            name="name"
+            label=""
+            placeholder={raceInfo && raceInfo.race}
+            onChange={handleName}
+            error={error}
+          ></Input>
+        </Content>
+        <ButtonWrapperRight>
+          <ArrowButton type="submit"></ArrowButton>
+        </ButtonWrapperRight>
+        <RaceSelect handleSelect={handleSelect} race={race}></RaceSelect>
+      </FormContainer>
     </Container>
   );
 };
