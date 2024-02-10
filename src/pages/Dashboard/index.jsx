@@ -16,7 +16,10 @@ const Dashboard = () => {
         </NavLink>
       </ContentWrapper>
       <NavLink to="/rules">
-        <InfoButton><FaBook/></InfoButton>
+        <InfoButton>
+          <FaBook/>
+          <span>Regras</span>
+        </InfoButton>
       </NavLink>
     </Section>
   );

@@ -64,23 +64,23 @@ const CreateCharacter = () => {
       {disadvantages && disadvantages.map((disadvantage,index) => {return <span key={index} className="disadvantage">{disadvantage}</span>})}</Benefits>
       
       {raceInfo && <Description display={display}>{raceInfo.description}</Description>}
-          <FormContainer onSubmit={onSubmitFunction}>
-            <RaceTitle>{raceInfo && raceInfo.race}</RaceTitle>
-            <Content>
-              <Return onClick={() => history.push("/")}>RETORNAR</Return>
-              <Input
-                name="name"
-                label=""
-                placeholder={raceInfo && raceInfo.race}
-                onChange={handleName}
-                error={error}
-              ></Input>
-              <RaceSelect handleSelect={handleSelect} race={race}></RaceSelect>
-            </Content>
-            <ButtonWrapperRight>
-              <ArrowButton type="submit"></ArrowButton>
-            </ButtonWrapperRight>
-          </FormContainer>
+      <FormContainer onSubmit={onSubmitFunction}>
+        <RaceTitle>{raceInfo && raceInfo.race}</RaceTitle>
+        <Content>
+          <Return onClick={() => history.push("/")}>RETORNAR</Return>
+          <Input
+            name="name"
+            label=""
+            placeholder={raceInfo && raceInfo.race}
+            onChange={handleName}
+            error={error}
+          ></Input>
+        </Content>
+        <ButtonWrapperRight>
+          <ArrowButton type="submit"></ArrowButton>
+        </ButtonWrapperRight>
+        <RaceSelect handleSelect={handleSelect} race={race}></RaceSelect>
+      </FormContainer>
     </Container>
   );
 };

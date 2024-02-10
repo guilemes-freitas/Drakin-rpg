@@ -8,6 +8,7 @@ export const GlobalStyles = createGlobalStyle`
         --black: #000714;
         --red: #ED0010;
         --blue: #2E589B;
+        --light-blue: #0C94E9;
     }
 
     html, body, div, span, applet, object, iframe,

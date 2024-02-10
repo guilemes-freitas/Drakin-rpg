@@ -58,6 +58,7 @@ export const InfoButton = styled.div`
   top: 0;
   right: 2rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: var(--blue);
@@ -68,6 +69,9 @@ export const InfoButton = styled.div`
   width: 50px;
   clip-path: polygon(0% 55%,0% 0%,100% 0%,100% 100%,50% 75%,0% 100%);
   font-size: 20px;
+  >span{
+    font-size: 12px;
+  }
   @media screen and (min-width: 720px) {
     top: 2rem;
     right: 2rem;
@@ -75,6 +79,9 @@ export const InfoButton = styled.div`
     height: 110px;
     width: 100px;
     font-size: 40px;
+    >span{
+      font-size: 20px;
+    }
     transition: .2s ease-in-out;
     &:hover{
       height: 125px;

@@ -68,22 +68,6 @@ const raceStatus = [
   },
   {
     id: "5",
-    race: "Elfo",
-    region: "Continente Élfico",
-    image: Asrimer,
-    benefits: [
-      "+2 Inteligência",
-      "+3 destreza",
-      "+3 em testes de percepção.",
-      "Mana reading: Consegue sentir as emoções de uma criatura",
-    ],
-    proficiences:{},
-    bonus:{intelligence:2,dexterity:3},
-    resistences:{},
-    description: "É dito que os elfos já existiam muito antes do primeiro humano surgir, visto que, todos os registros históricos foram perdidos, não se sabe muito sobre a veracidade desse fato.",
-  },
-  {
-    id: "6",
     race: "Jeo'donghe",
     region: "Continente Élfico",
     image: Asrimer,

@@ -10,8 +10,8 @@ const RadioSelector = ({ name, value, selected, children, options, ...rest }) =>
         checked={selected}
         {...rest}
       />
-      <Race selected={selected}>{children}</Race>
       <ItemBorder selected={selected}></ItemBorder>
+      <Race selected={selected}>{children}</Race>
     </Container>
   );
 };
